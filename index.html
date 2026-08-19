@@ -384,6 +384,37 @@ body{
 
 
 /* =========================================================
+   CUENTA PARA LEER LA CARTA
+========================================================= */
+
+.reading-countdown{
+    position:absolute;
+    bottom:34px;
+    width:100%;
+    text-align:center;
+    color:#e8c66d;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:24px;
+    font-style:italic;
+    letter-spacing:1px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .4s ease, transform .4s ease;
+    text-shadow:0 0 10px rgba(255,205,100,.35);
+    pointer-events:none;
+}
+
+.opening-screen.opening .reading-countdown{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.opening-screen.opening .reading-countdown.finished{
+    opacity:0;
+}
+
+
+/* =========================================================
    FONDO PRINCIPAL
 ========================================================= */
 
@@ -1099,6 +1130,14 @@ h1{
 
     }
 
+    .reading-countdown{
+
+        bottom:48px;
+
+        font-size:20px;
+
+    }
+
 
     .music-wrap{
 
@@ -1272,6 +1311,8 @@ h1{
             Toca el sobre para abrir
 
         </div>
+
+        <div class="reading-countdown" id="readingCountdown"></div>
 
 
     </div>
@@ -1744,6 +1785,11 @@ const musicStatus =
         "musicStatus"
     );
 
+const readingCountdown =
+    document.getElementById(
+        "readingCountdown"
+    );
+
 
 /* =========================================================
    ABRIR INVITACIÓN
@@ -1796,8 +1842,45 @@ envelopeArea.addEventListener(
 
 
         /*
-           Esperamos a que termine
-           la animación del sobre
+           La carta queda visible durante 5 segundos
+           completos antes de pasar a la invitación.
+        */
+
+        let secondsLeft = 5;
+
+        readingCountdown.textContent =
+            "Puedes leer la carta · " + secondsLeft;
+
+        const countdownTimer =
+            setInterval(
+                function(){
+
+                    secondsLeft--;
+
+                    if(secondsLeft > 0){
+
+                        readingCountdown.textContent =
+                            "Puedes leer la carta · " + secondsLeft;
+
+                    }else{
+
+                        clearInterval(countdownTimer);
+
+                        readingCountdown.classList.add(
+                            "finished"
+                        );
+
+                    }
+
+                },
+                1000
+            );
+
+
+        /*
+           1.5 segundos de apertura
+           + 5 segundos completos para leer
+           = 6.5 segundos antes de continuar.
         */
 
         setTimeout(
@@ -1811,7 +1894,7 @@ envelopeArea.addEventListener(
                     "auto";
 
             },
-            1500
+            6500
         );
 
     }

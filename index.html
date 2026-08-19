@@ -7,6 +7,7 @@
 <title>Mis XV Años — Edgar Tadeo Fernández Esparza</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -20,7 +21,12 @@ html{
 body{
     min-height:100vh;
     background:
-        radial-gradient(circle at 50% 0%, #17233d 0%, #080b14 42%, #020307 100%);
+        radial-gradient(
+            circle at 50% 0%,
+            #17233d 0%,
+            #080b14 42%,
+            #020307 100%
+        );
     color:#f1f5ff;
     font-family:Georgia,"Times New Roman",serif;
     overflow-x:hidden;
@@ -32,8 +38,16 @@ body::before{
     inset:0;
     pointer-events:none;
     background:
-        radial-gradient(circle at 20% 20%,rgba(0,150,255,.08),transparent 25%),
-        radial-gradient(circle at 80% 70%,rgba(120,0,255,.08),transparent 30%);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,150,255,.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(120,0,255,.08),
+            transparent 30%
+        );
     z-index:-2;
 }
 
@@ -42,6 +56,7 @@ body::before{
     margin:auto;
     padding:28px 0 80px;
 }
+
 
 /* =========================
    MÚSICA
@@ -60,9 +75,11 @@ body::before{
     padding:13px 20px;
     color:#fff;
     background:rgba(2,8,20,.94);
+
     box-shadow:
         0 0 18px rgba(34,231,255,.45),
         inset 0 0 15px rgba(34,231,255,.08);
+
     font:bold 14px Arial,sans-serif;
     cursor:pointer;
     transition:.25s ease;
@@ -70,8 +87,11 @@ body::before{
 
 .music-btn:hover{
     transform:translateY(-2px);
+
     background:rgba(0,70,120,.6);
-    box-shadow:0 0 30px rgba(34,231,255,.8);
+
+    box-shadow:
+        0 0 30px rgba(34,231,255,.8);
 }
 
 .music-status{
@@ -79,12 +99,15 @@ body::before{
     margin-top:8px;
     padding:8px 12px;
     border-radius:10px;
+
     background:rgba(0,0,0,.8);
     border:1px solid rgba(34,231,255,.35);
+
     font:12px Arial,sans-serif;
     color:#dffaff;
     text-align:center;
 }
+
 
 /* =========================
    PORTADA
@@ -92,23 +115,29 @@ body::before{
 
 .hero{
     min-height:92vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
 }
 
 .hero-card{
     width:100%;
     padding:55px 28px;
+
     border-radius:34px;
+
     background:
         linear-gradient(
             145deg,
             rgba(20,30,55,.95),
             rgba(4,7,16,.97)
         );
+
     border:1px solid rgba(34,231,255,.35);
+
     box-shadow:
         0 0 50px rgba(0,160,255,.12),
         inset 0 0 35px rgba(0,140,255,.05);
@@ -116,42 +145,58 @@ body::before{
 
 .kicker{
     color:#63eaff;
+
     letter-spacing:7px;
+
     font:700 13px Arial,sans-serif;
+
     margin-bottom:25px;
 }
 
 h1{
     font-size:clamp(48px,9vw,86px);
+
     letter-spacing:8px;
+
     font-weight:400;
+
     margin-bottom:15px;
-    text-shadow:0 0 15px rgba(34,231,255,.35);
+
+    text-shadow:
+        0 0 15px rgba(34,231,255,.35);
 }
 
 .subtitle{
     font-size:clamp(18px,3vw,25px);
+
     color:#d7e4ff;
+
     margin-bottom:30px;
 }
 
 .divider{
     width:150px;
     height:1px;
+
     margin:25px auto;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        #39ddff,
-        transparent
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #39ddff,
+            transparent
+        );
 }
 
 .date{
     font:700 16px Arial,sans-serif;
+
     letter-spacing:3px;
+
     color:#9deeff;
 }
+
 
 /* =========================
    FOTO
@@ -163,15 +208,24 @@ h1{
 
 .photo{
     display:block;
+
     width:100%;
     max-width:560px;
+
     max-height:700px;
+
     object-fit:cover;
+
     margin:0 auto;
+
     border-radius:28px;
+
     border:2px solid rgba(34,231,255,.55);
-    box-shadow:0 0 35px rgba(0,173,255,.22);
+
+    box-shadow:
+        0 0 35px rgba(0,173,255,.22);
 }
+
 
 /* =========================
    SECCIONES
@@ -179,30 +233,47 @@ h1{
 
 .section{
     margin-top:35px;
+
     padding:35px 25px;
+
     border-radius:28px;
+
     background:rgba(5,10,22,.82);
+
     border:1px solid rgba(34,231,255,.22);
-    box-shadow:inset 0 0 25px rgba(0,140,255,.045);
+
+    box-shadow:
+        inset 0 0 25px rgba(0,140,255,.045);
 }
 
 .section-title{
     text-align:center;
+
     font-size:25px;
+
     letter-spacing:5px;
+
     text-transform:uppercase;
+
     color:#eafcff;
+
     margin-bottom:25px;
 }
 
 .text{
     max-width:720px;
+
     margin:auto;
+
     text-align:center;
+
     font-size:18px;
+
     line-height:1.8;
+
     color:#cbd8ef;
 }
+
 
 /* =========================
    FRASE
@@ -210,21 +281,30 @@ h1{
 
 .quote{
     max-width:760px;
+
     margin:auto;
+
     padding:10px 5px;
+
     text-align:center;
 }
 
 .quote p{
     color:#eef8ff;
+
     font-size:20px;
+
     line-height:1.9;
+
     font-style:italic;
+
+    margin-bottom:22px;
 }
 
-.quote p + p{
-    margin-top:18px;
+.quote p:last-child{
+    margin-bottom:0;
 }
+
 
 /* =========================
    DETALLES
@@ -232,70 +312,97 @@ h1{
 
 .details{
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:15px;
 }
 
 .detail{
     padding:22px;
+
     border-radius:20px;
+
     background:rgba(11,18,34,.85);
+
     border:1px solid rgba(34,231,255,.18);
+
     text-align:center;
 }
 
 .detail-title{
     color:#62e8ff;
+
     font:bold 13px Arial,sans-serif;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
     margin-bottom:10px;
 }
 
 .detail-text{
     color:#e5edff;
+
     font-size:18px;
 }
 
+
 /* =========================
-   FAMILIA — AL FINAL
+   FAMILIA AL FINAL
 ========================= */
 
 .family-box{
     display:grid;
+
     gap:18px;
 }
 
 .family-card{
     padding:25px 20px;
+
     border-radius:20px;
+
     background:rgba(11,18,34,.85);
+
     border:1px solid rgba(34,231,255,.2);
+
     text-align:center;
 }
 
 .family-card strong{
     display:block;
+
     color:#62e8ff;
+
     font-size:17px;
+
     margin-bottom:10px;
 }
 
 .family-card span{
     color:#f0f5ff;
+
     font-size:21px;
 }
 
+
 /* =========================
-   CONFIRMAR
+   CONFIRMAR ASISTENCIA
 ========================= */
 
 .confirm{
     margin-top:35px;
+
     padding:45px 25px;
+
     text-align:center;
+
     border-radius:30px;
+
     border:1px solid rgba(34,231,255,.4);
+
     background:
         linear-gradient(
             145deg,
@@ -306,34 +413,55 @@ h1{
 
 .confirm h2{
     font-size:28px;
+
     letter-spacing:3px;
+
     margin-bottom:15px;
 }
 
 .confirm p{
     color:#aebdd1;
+
     margin-bottom:25px;
+
     line-height:1.7;
 }
 
 .confirm-btn{
     display:inline-block;
+
     border:1px solid #64eaff;
+
     border-radius:999px;
+
     padding:15px 30px;
+
     background:rgba(7,72,105,.7);
+
     color:#fff;
+
     font:bold 15px Arial,sans-serif;
+
     cursor:pointer;
-    box-shadow:0 0 25px rgba(0,180,255,.3);
+
+    box-shadow:
+        0 0 25px rgba(0,180,255,.3);
+
     transition:.3s;
 }
 
 .confirm-btn:hover{
-    transform:translateY(-2px) scale(1.03);
-    background:rgba(8,120,165,.8);
-    box-shadow:0 0 35px rgba(0,200,255,.55);
+    transform:
+        translateY(-2px)
+        scale(1.03);
+
+    background:
+        rgba(8,120,165,.8);
+
+    box-shadow:
+        0 0 35px rgba(0,200,255,.55);
 }
+
 
 /* =========================
    FOOTER
@@ -341,11 +469,16 @@ h1{
 
 footer{
     text-align:center;
+
     margin-top:45px;
+
     color:#62748e;
+
     font:12px Arial,sans-serif;
+
     letter-spacing:2px;
 }
+
 
 /* =========================
    MÓVIL
@@ -355,6 +488,7 @@ footer{
 
     .page{
         width:94%;
+
         padding-top:85px;
     }
 
@@ -365,11 +499,13 @@ footer{
 
     .music-btn{
         padding:11px 15px;
+
         font-size:12px;
     }
 
     .hero{
         min-height:auto;
+
         padding-top:20px;
     }
 
@@ -379,6 +515,7 @@ footer{
 
     h1{
         font-size:45px;
+
         letter-spacing:5px;
     }
 
@@ -396,6 +533,7 @@ footer{
 
     .quote p{
         font-size:17px;
+
         line-height:1.8;
     }
 
@@ -407,13 +545,16 @@ footer{
         font-size:18px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
+
 <!-- =========================
-     BOTÓN MÚSICA
+     BOTÓN DE MÚSICA
 ========================= -->
 
 <div class="music-wrap">
@@ -422,15 +563,20 @@ footer{
         class="music-btn"
         id="musicBtn"
         type="button">
+
         ▶ REPRODUCIR MÚSICA
+
     </button>
+
 
     <div
         class="music-status"
         id="musicStatus">
+
     </div>
 
 </div>
+
 
 <!-- =========================
      AUDIO
@@ -440,296 +586,457 @@ footer{
     id="musicAudio"
     loop
     preload="auto">
-    
+
     <source
         src="./musica.mp3"
         type="audio/mpeg">
 
     Tu navegador no puede reproducir audio.
+
 </audio>
+
 
 
 <main class="page">
 
-    <!-- =========================
-         PORTADA
-    ========================= -->
 
-    <section class="hero">
+<!-- =========================
+     PORTADA
+========================= -->
 
-        <div class="hero-card">
+<section class="hero">
 
-            <div class="kicker">
-                MIS XV AÑOS
-            </div>
+    <div class="hero-card">
 
-            <h1>
-                UNA NOCHE
-                <br>
-                ESPECIAL
-            </h1>
-
-            <div class="divider"></div>
-
-            <p class="subtitle">
-                Edgar Tadeo Fernández Esparza
-            </p>
-
-            <p class="date">
-                UNA NOCHE LLENA DE MÚSICA,
-                LUCES Y MOMENTOS INOLVIDABLES
-            </p>
-
-            <div class="photo-box">
-
-                <img
-                    class="photo"
-                    src="./foto.jpg"
-                    alt="Edgar Tadeo Fernández Esparza">
-
-            </div>
-
+        <div class="kicker">
+            MIS XV AÑOS
         </div>
 
-    </section>
+
+        <h1>
+
+            UNA NOCHE
+            <br>
+            ESPECIAL
+
+        </h1>
 
 
-    <!-- =========================
-         MENSAJE
-    ========================= -->
+        <div class="divider"></div>
 
-    <section class="section">
 
-        <h2 class="section-title">
-            Una noche para recordar
-        </h2>
+        <p class="subtitle">
 
-        <p class="text">
-            Hay momentos que merecen quedarse
-            para siempre. Esta celebración es una
-            oportunidad para compartir alegría,
-            recuerdos y momentos especiales con
-            las personas que más quiero.
+            Edgar Tadeo Fernández Esparza
+
         </p>
 
-    </section>
+
+        <p class="date">
+
+            UNA NOCHE LLENA DE MÚSICA,
+            LUCES Y MOMENTOS INOLVIDABLES
+
+        </p>
 
 
-    <!-- =========================
-         FRASE QUE MANDASTE
-    ========================= -->
+        <div class="photo-box">
 
-    <section class="section">
-
-        <h2 class="section-title">
-            Una frase para recordar
-        </h2>
-
-        <div class="quote">
-
-            <p>
-                Porque cada día de mi vida ha sido un regalo,
-                y en cada paso he encontrado amor, cuidado y bendiciones.
-            </p>
-
-            <p>
-                Doy gracias a Dios por permitirme llegar hasta este día,
-                por la familia que me ha acompañado desde mis primeros pasos,
-                por las manos que me han cuidado,
-                por las palabras que me han enseñado
-                y por cada corazón que ha estado a mi lado.
-            </p>
-
-            <p>
-                Hoy miro hacia atrás con gratitud,
-                porque sé que no he caminado sola.
-                Y miro hacia adelante con esperanza,
-                con el corazón lleno de sueños y la certeza
-                de que Dios seguirá guiando mi camino.
-            </p>
-
-            <p>
-                Que nunca me falte amor para agradecer,
-                valor para seguir adelante
-                y fe para confiar en lo que está por venir.
-            </p>
-
-            <p>
-                Hoy celebro mis quince años,
-                pero sobre todo celebro la vida,
-                a quienes la han llenado de amor
-                y la bendición de poder compartir este momento
-                con las personas que más quiero.
-            </p>
+            <img
+                class="photo"
+                src="./foto.jpg"
+                alt="Edgar Tadeo Fernández Esparza">
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         CRONÓMETRO
-    ========================= -->
 
-    <section class="section">
+<!-- =========================
+     MENSAJE
+========================= -->
 
-        <h2 class="section-title">
-            Cuenta regresiva
-        </h2>
+<section class="section">
 
-        <div class="details">
+    <h2 class="section-title">
 
-            <div class="detail">
-                <div class="detail-title">Días</div>
-                <div class="detail-text" id="days">00</div>
-            </div>
+        Una noche para recordar
 
-            <div class="detail">
-                <div class="detail-title">Horas</div>
-                <div class="detail-text" id="hours">00</div>
-            </div>
-
-            <div class="detail">
-                <div class="detail-title">Minutos</div>
-                <div class="detail-text" id="minutes">00</div>
-            </div>
-
-            <div class="detail">
-                <div class="detail-title">Segundos</div>
-                <div class="detail-text" id="seconds">00</div>
-            </div>
-
-        </div>
-
-    </section>
+    </h2>
 
 
-    <!-- =========================
-         FECHA / HORA / LUGAR /
-         VESTIMENTA
-         
-         AQUÍ DEBES CONSERVAR
-         TUS DATOS ORIGINALES.
-    ========================= -->
+    <p class="text">
 
-    <section class="section">
+        Hay momentos que merecen quedarse
+        para siempre. Esta celebración es una
+        oportunidad para compartir alegría,
+        recuerdos y momentos especiales con
+        las personas que más quiero.
 
-        <h2 class="section-title">
-            Detalles del evento
-        </h2>
+    </p>
 
-        <div class="details">
-
-            <div class="detail">
-                <div class="detail-title">Fecha</div>
-                <div class="detail-text">
-                    <!-- CONSERVA AQUÍ TU FECHA ORIGINAL -->
-                </div>
-            </div>
-
-            <div class="detail">
-                <div class="detail-title">Hora</div>
-                <div class="detail-text">
-                    <!-- CONSERVA AQUÍ TU HORA ORIGINAL -->
-                </div>
-            </div>
-
-            <div class="detail">
-                <div class="detail-title">Lugar</div>
-                <div class="detail-text">
-                    <!-- CONSERVA AQUÍ TU LUGAR ORIGINAL -->
-                </div>
-            </div>
-
-            <div class="detail">
-                <div class="detail-title">Código de vestimenta</div>
-                <div class="detail-text">
-                    <!-- CONSERVA AQUÍ TU CÓDIGO ORIGINAL -->
-                </div>
-            </div>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- =========================
-         FAMILIA — ÚLTIMO
-    ========================= -->
 
-    <section class="section">
+<!-- =========================
+     FRASE NUEVA
+========================= -->
 
-        <h2 class="section-title">
-            Con amor
-        </h2>
+<section class="section">
 
-        <div class="family-box">
+    <h2 class="section-title">
 
-            <div class="family-card">
+        Una frase para recordar
 
-                <strong>
-                    Con el amor de mi madre
-                </strong>
-
-                <span>
-                    Karla Karina Fernández Esparza
-                </span>
-
-            </div>
-
-            <div class="family-card">
-
-                <strong>
-                    Con el cariño de mis padrinos
-                </strong>
-
-                <span>
-                    Ivonne y Jesús
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
+    </h2>
 
 
-    <!-- =========================
-         CONFIRMAR ASISTENCIA
-         ÚLTIMO ELEMENTO
-    ========================= -->
+    <div class="quote">
 
-    <section class="confirm">
-
-        <h2>
-            Confirmar asistencia
-        </h2>
 
         <p>
-            Será un honor contar con tu presencia
-            en este momento tan especial.
+
+            Porque cada día de mi vida ha sido un regalo,
+            y en cada paso he encontrado amor, cuidado y bendiciones.
+
         </p>
 
-        <button
-            class="confirm-btn"
-            id="confirmBtn"
-            type="button">
 
-            CONFIRMAR ASISTENCIA
+        <p>
 
-        </button>
+            Doy gracias a Dios por permitirme llegar hasta este día,
+            por la familia que me ha acompañado desde mis primeros pasos,
+            por las manos que me han cuidado,
+            por las palabras que me han enseñado
+            y por cada corazón que ha estado a mi lado.
 
-    </section>
+        </p>
 
 
-    <footer>
-        MIS XV AÑOS · EDGAR TADEO FERNÁNDEZ ESPARZA
-    </footer>
+        <p>
+
+            Hoy miro hacia atrás con gratitud,
+            porque sé que no he caminado solo.
+            Y miro hacia adelante con esperanza,
+            con el corazón lleno de sueños y la certeza
+            de que Dios seguirá guiando mi camino.
+
+        </p>
+
+
+        <p>
+
+            Que nunca me falte amor para agradecer,
+            valor para seguir adelante
+            y fe para confiar en lo que está por venir.
+
+        </p>
+
+
+        <p>
+
+            Hoy celebro mis quince años,
+            pero sobre todo celebro la vida,
+            a quienes la han llenado de amor
+            y la bendición de poder compartir este momento
+            con las personas que más quiero.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CRONÓMETRO
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+
+        Cuenta regresiva
+
+    </h2>
+
+
+    <div class="details">
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Días
+            </div>
+
+            <div
+                class="detail-text"
+                id="days">
+
+                00
+
+            </div>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Horas
+            </div>
+
+            <div
+                class="detail-text"
+                id="hours">
+
+                00
+
+            </div>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Minutos
+            </div>
+
+            <div
+                class="detail-text"
+                id="minutes">
+
+                00
+
+            </div>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Segundos
+            </div>
+
+            <div
+                class="detail-text"
+                id="seconds">
+
+                00
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FECHA / HORA / LUGAR /
+     VESTIMENTA
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+
+        Detalles del evento
+
+    </h2>
+
+
+    <div class="details">
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Fecha
+            </div>
+
+            <div class="detail-text">
+
+                <!-- PON AQUÍ TU FECHA ORIGINAL -->
+
+            </div>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Hora
+            </div>
+
+            <div class="detail-text">
+
+                <!-- PON AQUÍ TU HORA ORIGINAL -->
+
+            </div>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Lugar
+            </div>
+
+            <div class="detail-text">
+
+                <!-- PON AQUÍ TU LUGAR ORIGINAL -->
+
+            </div>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detail-title">
+                Código de vestimenta
+            </div>
+
+            <div class="detail-text">
+
+                <!-- PON AQUÍ TU CÓDIGO ORIGINAL -->
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MAMÁ Y PADRINOS
+     HASTA EL FINAL
+========================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+
+        Con amor
+
+    </h2>
+
+
+    <div class="family-box">
+
+
+        <div class="family-card">
+
+            <strong>
+
+                Con el amor de mi madre
+
+            </strong>
+
+
+            <span>
+
+                Karla Karina Fernández Esparza
+
+            </span>
+
+        </div>
+
+
+
+        <div class="family-card">
+
+            <strong>
+
+                Con el cariño de mis padrinos
+
+            </strong>
+
+
+            <span>
+
+                Ivonne y Jesús
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONFIRMAR ASISTENCIA
+     ÚLTIMO
+========================= -->
+
+<section class="confirm">
+
+
+    <h2>
+
+        Confirmar asistencia
+
+    </h2>
+
+
+    <p>
+
+        Será un honor contar con tu presencia
+        en este momento tan especial.
+
+    </p>
+
+
+    <button
+        class="confirm-btn"
+        id="confirmBtn"
+        type="button">
+
+        CONFIRMAR ASISTENCIA
+
+    </button>
+
+
+</section>
+
+
+
+<footer>
+
+    MIS XV AÑOS · EDGAR TADEO FERNÁNDEZ ESPARZA
+
+</footer>
+
 
 </main>
 
 
+
 <script>
+
 
 /* =========================
    MÚSICA
@@ -738,68 +1045,83 @@ footer{
 const musicBtn =
     document.getElementById("musicBtn");
 
+
 const musicAudio =
     document.getElementById("musicAudio");
+
 
 const musicStatus =
     document.getElementById("musicStatus");
 
 
-musicBtn.addEventListener("click", async function(){
+musicBtn.addEventListener(
+    "click",
+    async function(){
 
-    try{
+        try{
 
-        if(musicAudio.paused){
 
-            await musicAudio.play();
+            if(musicAudio.paused){
 
-            musicBtn.textContent =
-                "⏸ PAUSAR MÚSICA";
+                await musicAudio.play();
+
+
+                musicBtn.textContent =
+                    "⏸ PAUSAR MÚSICA";
+
+
+                musicStatus.textContent =
+                    "🎵 Música reproduciéndose";
+
+
+                musicStatus.style.display =
+                    "block";
+
+
+            }else{
+
+
+                musicAudio.pause();
+
+
+                musicBtn.textContent =
+                    "▶ REPRODUCIR MÚSICA";
+
+
+                musicStatus.textContent =
+                    "⏸ Música pausada";
+
+            }
+
+
+        }catch(error){
+
 
             musicStatus.textContent =
-                "🎵 Música reproduciéndose";
+                "❌ No se pudo cargar musica.mp3";
+
 
             musicStatus.style.display =
                 "block";
 
-        }else{
 
-            musicAudio.pause();
-
-            musicBtn.textContent =
-                "▶ REPRODUCIR MÚSICA";
-
-            musicStatus.textContent =
-                "⏸ Música pausada";
+            console.error(error);
 
         }
 
-    }catch(error){
-
-        musicStatus.textContent =
-            "❌ No se pudo cargar musica.mp3";
-
-        musicStatus.style.display =
-            "block";
-
-        console.error(error);
-
     }
+);
 
-});
 
 
 /* =========================
    CUENTA REGRESIVA
-
-   IMPORTANTE:
-   Conserva aquí la fecha/hora
-   que ya tenías en tu código.
 ========================= */
 
 /*
-   PON AQUÍ EXACTAMENTE LA MISMA
-   FECHA QUE YA TENÍAS.
+   IMPORTANTE:
+   AQUÍ DEBE IR LA MISMA FECHA
+   QUE TENÍAS EN TU CÓDIGO ORIGINAL.
 */
 
 const fechaEvento =
@@ -808,8 +1130,10 @@ const fechaEvento =
 
 function actualizarCuenta(){
 
+
     const ahora =
         new Date().getTime();
+
 
     const diferencia =
         fechaEvento - ahora;
@@ -817,17 +1141,17 @@ function actualizarCuenta(){
 
     if(diferencia <= 0){
 
-        document.getElementById("days").textContent =
-            "00";
+        document.getElementById("days")
+            .textContent = "00";
 
-        document.getElementById("hours").textContent =
-            "00";
+        document.getElementById("hours")
+            .textContent = "00";
 
-        document.getElementById("minutes").textContent =
-            "00";
+        document.getElementById("minutes")
+            .textContent = "00";
 
-        document.getElementById("seconds").textContent =
-            "00";
+        document.getElementById("seconds")
+            .textContent = "00";
 
         return;
 
@@ -840,6 +1164,7 @@ function actualizarCuenta(){
             (1000 * 60 * 60 * 24)
         );
 
+
     const horas =
         Math.floor(
             (diferencia %
@@ -847,12 +1172,14 @@ function actualizarCuenta(){
             (1000 * 60 * 60)
         );
 
+
     const minutos =
         Math.floor(
             (diferencia %
             (1000 * 60 * 60)) /
             (1000 * 60)
         );
+
 
     const segundos =
         Math.floor(
@@ -862,16 +1189,23 @@ function actualizarCuenta(){
         );
 
 
-    document.getElementById("days").textContent =
+    document.getElementById("days")
+        .textContent =
         String(dias).padStart(2,"0");
 
-    document.getElementById("hours").textContent =
+
+    document.getElementById("hours")
+        .textContent =
         String(horas).padStart(2,"0");
 
-    document.getElementById("minutes").textContent =
+
+    document.getElementById("minutes")
+        .textContent =
         String(minutos).padStart(2,"0");
 
-    document.getElementById("seconds").textContent =
+
+    document.getElementById("seconds")
+        .textContent =
         String(segundos).padStart(2,"0");
 
 }
@@ -879,10 +1213,12 @@ function actualizarCuenta(){
 
 actualizarCuenta();
 
+
 setInterval(
     actualizarCuenta,
     1000
 );
+
 
 
 /* =========================
@@ -890,15 +1226,19 @@ setInterval(
 ========================= */
 
 document.getElementById("confirmBtn")
-.addEventListener("click", function(){
+    .addEventListener(
+        "click",
+        function(){
 
-    alert(
-        "¡Gracias por confirmar tu asistencia! 💙"
+            alert(
+                "¡Gracias por confirmar tu asistencia! 💙"
+            );
+
+        }
     );
 
-});
-
 </script>
+
 
 </body>
 </html>

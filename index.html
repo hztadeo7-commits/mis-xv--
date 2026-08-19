@@ -1,4 +1,3 @@
-`
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,6 +46,11 @@ body::before{
     z-index:-2;
 }
 
+
+/* ==============================
+   BOTÓN DE MÚSICA
+============================== */
+
 .music-wrap{
     position:fixed;
     top:18px;
@@ -91,37 +95,66 @@ body::before{
     text-align:center;
 }
 
+
+/* ==============================
+   PORTADA
+   FONDO CORREGIDO
+============================== */
+
 .hero{
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     padding:35px 18px;
+
     background:
-        linear-gradient(
-            rgba(0,0,0,.48),
-            rgba(0,0,0,.72)
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(16,55,90,.45),
+            transparent 45%
         ),
-        url("foto.jpg") center/cover no-repeat;
+        linear-gradient(
+            180deg,
+            #061525 0%,
+            #020912 55%,
+            #01040a 100%
+        );
 }
+
+
+/* ==============================
+   TARJETA
+============================== */
 
 .hero-card{
     width:min(760px,95%);
     padding:48px 30px;
     text-align:center;
+
     background:
         linear-gradient(
             180deg,
             rgba(13,39,64,.78),
             rgba(2,10,22,.94)
         );
+
     border:1px solid rgba(34,231,255,.45);
     border-radius:38px;
+
     box-shadow:
         0 0 50px rgba(34,231,255,.15),
         inset 0 0 40px rgba(255,255,255,.03);
+
     backdrop-filter:blur(8px);
 }
+
+
+/* ==============================
+   TEXTOS
+============================== */
 
 .small-title{
     font-size:18px;
@@ -135,6 +168,7 @@ h1{
     font-size:64px;
     letter-spacing:4px;
     margin:8px 0;
+
     text-shadow:
         0 0 12px rgba(255,255,255,.65),
         0 0 30px rgba(34,231,255,.35);
@@ -159,93 +193,162 @@ h1{
     width:110px;
     height:2px;
     margin:28px auto;
+
     background:#23e7ff;
-    box-shadow:0 0 15px rgba(34,231,255,.8);
+
+    box-shadow:
+        0 0 15px rgba(34,231,255,.8);
 }
+
+
+/* ==============================
+   FOTO
+   AHORA SOLO AQUÍ
+============================== */
 
 .photo{
     display:block;
+
     width:92%;
     max-width:560px;
+
     margin:30px auto;
+
     border-radius:38px;
+
     border:1px solid rgba(255,255,255,.35);
-    box-shadow:0 0 35px rgba(0,132,255,.25);
+
+    box-shadow:
+        0 0 35px rgba(0,132,255,.25);
+
     object-fit:cover;
 }
 
+
+/* ==============================
+   CUENTA REGRESIVA
+============================== */
+
 .section-title{
     font-size:25px;
+
     letter-spacing:2px;
+
     margin:35px 0 18px;
+
     color:#ffffff;
-    text-shadow:0 0 12px rgba(34,231,255,.45);
+
+    text-shadow:
+        0 0 12px rgba(34,231,255,.45);
 }
 
 .countdown{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:10px;
+
     margin:20px auto;
+
     max-width:650px;
 }
 
 .count-box{
     padding:18px 8px;
+
     background:rgba(5,18,35,.78);
+
     border:1px solid rgba(34,231,255,.35);
+
     border-radius:22px;
-    box-shadow:0 0 18px rgba(34,231,255,.08);
+
+    box-shadow:
+        0 0 18px rgba(34,231,255,.08);
 }
 
 .count-box strong{
     display:block;
+
     font-size:30px;
+
     color:#ffffff;
 }
 
 .count-box span{
     display:block;
+
     margin-top:5px;
+
     font-size:12px;
+
     letter-spacing:1px;
+
     color:#bffaff;
+
     text-transform:uppercase;
 }
 
+
+/* ==============================
+   INFORMACIÓN
+============================== */
+
 .event-info{
     display:grid;
+
     gap:15px;
+
     margin-top:28px;
 }
 
 .info-box{
     padding:17px;
+
     border-radius:20px;
+
     background:rgba(4,18,34,.72);
+
     border:1px solid rgba(255,255,255,.14);
 }
 
 .info-box .label{
     display:block;
+
     margin-bottom:5px;
+
     color:#6ff3ff;
+
     font-size:13px;
+
     font-weight:bold;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
 }
 
 .info-box .value{
     font-size:19px;
+
     line-height:1.5;
 }
 
+
+/* ==============================
+   VESTIMENTA
+============================== */
+
 .dress-code{
     margin-top:20px;
+
     padding:20px;
+
     border:1px solid rgba(34,231,255,.3);
+
     border-radius:22px;
+
     background:
         linear-gradient(
             135deg,
@@ -256,55 +359,88 @@ h1{
 
 .dress-code h3{
     margin-bottom:8px;
+
     color:#6ff3ff;
+
     letter-spacing:2px;
 }
 
 .dress-code p{
     font-size:18px;
+
     line-height:1.6;
 }
 
+
+/* ==============================
+   FRASE
+============================== */
+
 .quote-section{
     margin-top:45px;
+
     padding:30px 22px;
+
     border-radius:28px;
+
     background:rgba(2,14,28,.62);
+
     border:1px solid rgba(34,231,255,.22);
 }
 
 .quote-section h2{
     margin-bottom:25px;
+
     font-size:27px;
+
     color:#ffffff;
-    text-shadow:0 0 15px rgba(34,231,255,.4);
+
+    text-shadow:
+        0 0 15px rgba(34,231,255,.4);
 }
 
 .quote{
     max-width:650px;
+
     margin:auto;
+
     font-size:17px;
+
     line-height:1.9;
+
     color:#f5ffff;
 }
 
+
+/* ==============================
+   FAMILIA
+============================== */
+
 .family{
     margin-top:45px;
+
     padding-top:25px;
+
     border-top:1px solid rgba(255,255,255,.18);
 }
 
 .family-title{
     margin-bottom:12px;
+
     font-size:14px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     color:#6ff3ff;
 }
 
 .family-name{
     font-size:24px;
+
     line-height:1.45;
+
     margin-bottom:28px;
 }
 
@@ -312,37 +448,70 @@ h1{
     color:#ffffff;
 }
 
+
+/* ==============================
+   CONFIRMAR ASISTENCIA
+============================== */
+
 .confirm-section{
     margin-top:35px;
+
     padding-top:28px;
+
     border-top:1px solid rgba(255,255,255,.18);
 }
 
 .confirm-button{
     display:inline-block;
+
     padding:15px 28px;
+
     border-radius:999px;
+
     background:#ffffff;
+
     color:#07101b;
+
     text-decoration:none;
+
     font-family:Arial,sans-serif;
+
     font-size:15px;
+
     font-weight:700;
-    box-shadow:0 0 25px rgba(255,255,255,.25);
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.25);
+
     transition:.25s ease;
 }
 
 .confirm-button:hover{
     transform:translateY(-2px);
-    box-shadow:0 0 35px rgba(34,231,255,.55);
+
+    box-shadow:
+        0 0 35px rgba(34,231,255,.55);
 }
+
+
+/* ==============================
+   PIE
+============================== */
 
 .footer{
     margin-top:40px;
+
     font-size:13px;
+
     letter-spacing:3px;
+
     color:#9cecf5;
 }
+
+
+/* ==============================
+   MÓVIL
+============================== */
 
 @media(max-width:600px){
 
@@ -377,7 +546,8 @@ h1{
     }
 
     .countdown{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .count-box strong{
@@ -397,7 +567,13 @@ h1{
 </style>
 </head>
 
+
 <body>
+
+
+<!-- ==============================
+     MÚSICA
+============================== -->
 
 <div class="music-wrap">
 
@@ -418,13 +594,10 @@ h1{
 </div>
 
 
-<!--
-    IMPORTANTE:
-    TU ARCHIVO REAL SE LLAMA:
-    musica.mp3.mp3
-
-    NO LO CAMBIES POR AHORA.
--->
+<!-- ==============================
+     AUDIO
+     ARCHIVO REAL: musica.mp3.mp3
+============================== -->
 
 <audio
     id="musicAudio"
@@ -440,23 +613,32 @@ h1{
 </audio>
 
 
+<!-- ==============================
+     PORTADA
+============================== -->
+
 <main class="hero">
 
 <div class="hero-card">
+
 
 <div class="small-title">
     Estás invitado
 </div>
 
+
 <h1>
     MIS XV
 </h1>
+
 
 <div class="name">
     Edgar Tadeo Fernández Esparza
 </div>
 
+
 <div class="line"></div>
+
 
 <p class="intro">
 
@@ -466,16 +648,26 @@ h1{
 
 </p>
 
+
+<!-- FOTO -->
+
 <img
     class="photo"
     src="foto.jpg"
     alt="Edgar Tadeo">
 
+
+<!-- ==============================
+     CUENTA REGRESIVA
+============================== -->
+
 <h2 class="section-title">
     Cuenta regresiva
 </h2>
 
+
 <div class="countdown">
+
 
     <div class="count-box">
 
@@ -489,6 +681,7 @@ h1{
 
     </div>
 
+
     <div class="count-box">
 
         <strong id="days">
@@ -500,6 +693,7 @@ h1{
         </span>
 
     </div>
+
 
     <div class="count-box">
 
@@ -513,6 +707,7 @@ h1{
 
     </div>
 
+
     <div class="count-box">
 
         <strong id="seconds">
@@ -525,9 +720,16 @@ h1{
 
     </div>
 
+
 </div>
 
+
+<!-- ==============================
+     INFORMACIÓN
+============================== -->
+
 <div class="event-info">
+
 
     <div class="info-box">
 
@@ -541,6 +743,7 @@ h1{
 
     </div>
 
+
     <div class="info-box">
 
         <span class="label">
@@ -553,6 +756,7 @@ h1{
 
     </div>
 
+
     <div class="info-box">
 
         <span class="label">
@@ -560,10 +764,11 @@ h1{
         </span>
 
         <span class="value">
-            San Nicolas Terraza & Jardín
+            San Nicolas Terraza &amp; Jardín
         </span>
 
     </div>
+
 
     <div class="info-box">
 
@@ -577,7 +782,13 @@ h1{
 
     </div>
 
+
 </div>
+
+
+<!-- ==============================
+     VESTIMENTA
+============================== -->
 
 <div class="dress-code">
 
@@ -586,17 +797,22 @@ h1{
     </h3>
 
     <p>
-        Black & Crown
+        Black &amp; Crown
     </p>
 
 </div>
 
+
+<!-- ==============================
+     FRASE
+============================== -->
 
 <section class="quote-section">
 
     <h2>
         Una frase para recordar
     </h2>
+
 
     <p class="quote">
 
@@ -638,11 +854,17 @@ h1{
 </section>
 
 
+<!-- ==============================
+     FAMILIA
+============================== -->
+
 <section class="family">
+
 
     <div class="family-title">
         Con el amor de mi madre
     </div>
+
 
     <div class="family-name">
 
@@ -652,9 +874,11 @@ h1{
 
     </div>
 
+
     <div class="family-title">
         Con el cariño de mis padrinos
     </div>
+
 
     <div class="family-name">
 
@@ -664,7 +888,7 @@ h1{
 
         <br>
 
-        &
+        &amp;
 
         <br>
 
@@ -674,8 +898,13 @@ h1{
 
     </div>
 
+
 </section>
 
+
+<!-- ==============================
+     CONFIRMAR ASISTENCIA
+============================== -->
 
 <section
     class="confirm-section"
@@ -698,12 +927,18 @@ h1{
 
 </div>
 
+
 </div>
 
 </main>
 
 
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
 <script>
+
 
 /* ==============================
    MÚSICA
@@ -725,7 +960,9 @@ musicBtn.addEventListener(
 
         try{
 
-            if(musicAudio.paused){
+            if(
+                musicAudio.paused
+            ){
 
                 await musicAudio.play();
 
@@ -741,7 +978,9 @@ musicBtn.addEventListener(
                 musicStatus.textContent =
                     "♪ Música reproduciéndose";
 
-            }else{
+            }
+
+            else{
 
                 musicAudio.pause();
 
@@ -756,7 +995,9 @@ musicBtn.addEventListener(
 
             }
 
-        }catch(error){
+        }
+
+        catch(error){
 
             console.error(
                 "Error al reproducir:",
@@ -824,6 +1065,7 @@ function updateCountdown(){
     const distance =
         eventDate - now;
 
+
     if(distance <= 0){
 
         document.getElementById(
@@ -843,26 +1085,30 @@ function updateCountdown(){
         ).textContent = "0";
 
         return;
-
     }
+
 
     const secondsTotal =
         Math.floor(
             distance / 1000
         );
 
+
     const daysTotal =
         Math.floor(
             secondsTotal / 86400
         );
+
 
     const months =
         Math.floor(
             daysTotal / 30
         );
 
+
     const days =
         daysTotal % 30;
+
 
     const hours =
         Math.floor(
@@ -871,40 +1117,49 @@ function updateCountdown(){
             ) / 3600
         );
 
+
     const seconds =
         secondsTotal % 60;
+
 
     document.getElementById(
         "months"
     ).textContent =
         months;
 
+
     document.getElementById(
         "days"
     ).textContent =
         days;
+
 
     document.getElementById(
         "hours"
     ).textContent =
         hours;
 
+
     document.getElementById(
         "seconds"
     ).textContent =
         seconds;
+
 }
 
 
 updateCountdown();
+
 
 setInterval(
     updateCountdown,
     1000
 );
 
+
 </script>
 
+
 </body>
+
 </html>
-`

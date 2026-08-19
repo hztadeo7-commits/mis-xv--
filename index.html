@@ -3,394 +3,421 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis XV Años — Edgar Tadeo</title>
+
+<title>MIS XV — Edgar Tadeo Fernández Esparza</title>
 
 <style>
-:root{
-  --bg:#020817;
-  --blue:#008cff;
-  --cyan:#22e7ff;
-  --text:#f7fbff;
-  --muted:#d9e8f5;
-  --panel:rgba(4,20,45,.78);
-  --line:rgba(34,231,255,.72);
-}
 
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-  font-family:Georgia,"Times New Roman",serif;
-  color:var(--text);
-  text-align:center;
-  background:
-    radial-gradient(
-      circle at 50% 8%,
-      rgba(0,147,255,.34),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 10% 70%,
-      rgba(0,72,170,.22),
-      transparent 35%
-    ),
-    linear-gradient(
-      180deg,
-      #020817 0%,
-      #03142d 48%,
-      #020817 100%
-    );
-  overflow-x:hidden;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 0%, #17233d 0%, #080b14 42%, #020307 100%);
+    color:#f1f5ff;
+    font-family:Georgia, "Times New Roman", serif;
+    overflow-x:hidden;
 }
 
-/* ESTRELLAS */
+/* =========================
+   EFECTOS DE FONDO
+========================= */
+
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.35;
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(255,255,255,.85) 0 1px,
-      transparent 1.5px
-    );
-  background-size:80px 80px;
-  animation:stars 18s linear infinite;
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,150,255,.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(120,0,255,.08), transparent 30%);
+    z-index:-2;
 }
 
-@keyframes stars{
-  from{
-    transform:translateY(0);
-  }
-  to{
-    transform:translateY(80px);
-  }
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    overflow:hidden;
 }
 
-/* BOTÓN DE MÚSICA */
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 0 10px #fff;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.page{
+    width:min(920px,92%);
+    margin:auto;
+    padding:28px 0 80px;
+}
+
+/* =========================
+   BOTÓN DE MÚSICA
+========================= */
+
 .music-wrap{
-  position:fixed;
-  top:18px;
-  right:18px;
-  z-index:50;
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:100;
 }
 
 .music-btn{
-  border:1px solid var(--cyan);
-  border-radius:999px;
-  padding:12px 20px;
-  color:#fff;
-  background:rgba(2,12,30,.9);
-  box-shadow:0 0 18px rgba(34,231,255,.55);
-  font:700 15px Georgia,serif;
-  cursor:pointer;
+    border:1px solid #23d9ff;
+    border-radius:999px;
+    padding:13px 20px;
+    color:#fff;
+    background:rgba(2,8,20,.94);
+    box-shadow:
+        0 0 18px rgba(34,231,255,.45),
+        inset 0 0 15px rgba(34,231,255,.08);
+    font:bold 14px Arial,sans-serif;
+    cursor:pointer;
+    transition:.25s ease;
 }
 
 .music-btn:hover{
-  background:rgba(0,132,255,.28);
-  box-shadow:0 0 28px rgba(34,231,255,.85);
+    transform:translateY(-2px);
+    background:rgba(0,70,120,.6);
+    box-shadow:
+        0 0 30px rgba(34,231,255,.8);
 }
 
 .music-status{
-  display:none;
-  margin-top:8px;
-  font:12px Arial,sans-serif;
-  color:#bfefff;
+    display:none;
+    margin-top:8px;
+    padding:8px 12px;
+    border-radius:10px;
+    background:rgba(0,0,0,.8);
+    border:1px solid rgba(34,231,255,.35);
+    font:12px Arial,sans-serif;
+    color:#dffaff;
 }
 
-/* CONTENEDOR */
-.page{
-  width:min(760px,94%);
-  margin:auto;
-  padding:58px 0;
-  position:relative;
-  z-index:1;
-}
+/* =========================
+   PORTADA
+========================= */
 
-/* PORTADA */
 .hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .hero-card{
-  width:100%;
-  padding:48px 28px 42px;
-  border:1px solid var(--line);
-  border-radius:34px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5,31,67,.82),
-      rgba(2,13,31,.88)
-    );
-  box-shadow:
-    0 0 30px rgba(0,155,255,.25),
-    inset 0 0 30px rgba(0,184,255,.08);
-  backdrop-filter:blur(10px);
+    width:100%;
+    padding:55px 28px;
+    border-radius:34px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,30,55,.95),
+            rgba(4,7,16,.97)
+        );
+    border:1px solid rgba(34,231,255,.35);
+    box-shadow:
+        0 0 50px rgba(0,160,255,.12),
+        inset 0 0 35px rgba(0,140,255,.05);
+    position:relative;
+    overflow:hidden;
 }
 
-/* DIAMANTES */
-.diamonds{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:34px;
-  margin-bottom:28px;
+.hero-card::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(0,160,255,.07);
+    filter:blur(50px);
+    top:-140px;
+    left:50%;
+    transform:translateX(-50%);
 }
 
-.diamond{
-  width:28px;
-  height:28px;
-  transform:rotate(45deg);
-  border:2px solid #fff;
-  box-shadow:0 0 18px rgba(255,255,255,.9);
-  animation:glow 2.2s ease-in-out infinite alternate;
-}
-
-.diamond.big{
-  width:45px;
-  height:45px;
-}
-
-@keyframes glow{
-  from{
-    opacity:.55;
-    transform:rotate(45deg) scale(.92);
-  }
-
-  to{
-    opacity:1;
-    transform:rotate(45deg) scale(1.06);
-  }
-}
-
-/* TEXTOS */
 .kicker{
-  font-size:18px;
-  letter-spacing:7px;
-  text-transform:uppercase;
-  margin-bottom:18px;
+    color:#63eaff;
+    letter-spacing:7px;
+    font:700 13px Arial,sans-serif;
+    margin-bottom:25px;
 }
 
 h1{
-  margin:0;
-  font-size:clamp(48px,10vw,82px);
-  letter-spacing:8px;
-  font-weight:500;
-  text-shadow:0 0 22px rgba(255,255,255,.55);
+    font-size:clamp(48px,9vw,86px);
+    letter-spacing:8px;
+    font-weight:400;
+    margin-bottom:15px;
+    text-shadow:
+        0 0 15px rgba(34,231,255,.35);
 }
 
-.name{
-  margin:20px auto 0;
-  font-size:clamp(25px,5vw,38px);
-  font-weight:700;
-  line-height:1.25;
+.subtitle{
+    font-size:clamp(18px,3vw,25px);
+    color:#d7e4ff;
+    margin-bottom:30px;
 }
 
-.cyan-line{
-  width:150px;
-  height:2px;
-  margin:28px auto;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      var(--cyan),
-      transparent
+.divider{
+    width:150px;
+    height:1px;
+    margin:25px auto;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #39ddff,
+        transparent
     );
-  box-shadow:0 0 12px var(--cyan);
 }
 
-.message{
-  max-width:600px;
-  margin:auto;
-  font-size:19px;
-  line-height:1.75;
-  color:var(--muted);
+.date{
+    font:700 16px Arial,sans-serif;
+    letter-spacing:3px;
+    color:#9deeff;
 }
 
-/* FOTO */
+/* =========================
+   FOTO
+========================= */
+
+.photo-box{
+    margin-top:35px;
+}
+
 .photo{
-  width:100%;
-  max-width:520px;
-  margin:32px auto 0;
-  display:block;
-  border-radius:28px;
-  border:2px solid rgba(34,231,255,.65);
-  box-shadow:0 0 32px rgba(0,173,255,.35);
+    display:block;
+    width:100%;
+    max-width:560px;
+    max-height:700px;
+    object-fit:cover;
+    margin:0 auto;
+    border-radius:28px;
+    border:2px solid rgba(34,231,255,.55);
+    box-shadow:
+        0 0 35px rgba(0,173,255,.22);
 }
 
-/* SECCIONES */
+/* =========================
+   SECCIONES
+========================= */
+
 .section{
-  margin-top:34px;
-  padding:34px 24px;
-  border:1px solid rgba(34,231,255,.48);
-  border-radius:30px;
-  background:rgba(2,18,42,.78);
-  box-shadow:inset 0 0 25px rgba(0,150,255,.07);
+    margin-top:35px;
+    padding:35px 25px;
+    border-radius:28px;
+    background:rgba(5,10,22,.82);
+    border:1px solid rgba(34,231,255,.22);
+    box-shadow:
+        inset 0 0 25px rgba(0,140,255,.045);
 }
 
 .section-title{
-  margin:0 0 25px;
-  font-size:22px;
-  letter-spacing:6px;
-  text-transform:uppercase;
+    text-align:center;
+    font-size:25px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#eafcff;
+    margin-bottom:25px;
 }
 
-/* CUENTA REGRESIVA */
+.text{
+    max-width:720px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+    color:#cbd8ef;
+}
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
 .countdown{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
 .count-box{
-  padding:18px 8px;
-  border:1px solid rgba(34,231,255,.72);
-  border-radius:18px;
-  background:rgba(0,31,69,.7);
-  box-shadow:0 0 15px rgba(0,147,255,.16);
+    padding:22px 8px;
+    text-align:center;
+    border-radius:18px;
+    background:rgba(12,21,40,.9);
+    border:1px solid rgba(34,231,255,.3);
 }
 
 .count-box strong{
-  display:block;
-  font:700 clamp(28px,6vw,42px)/1 Arial,sans-serif;
+    display:block;
+    font-size:34px;
+    color:#64eaff;
+    text-shadow:0 0 12px rgba(34,231,255,.4);
 }
 
 .count-box span{
-  display:block;
-  margin-top:7px;
-  font:700 11px Arial,sans-serif;
-  letter-spacing:1.5px;
+    display:block;
+    margin-top:8px;
+    font:12px Arial,sans-serif;
+    letter-spacing:2px;
+    color:#9aaccb;
+    text-transform:uppercase;
 }
 
-/* INFORMACIÓN */
-.info{
-  display:grid;
-  gap:13px;
-}
+/* =========================
+   DETALLES
+========================= */
 
-.info-item{
-  padding:17px 18px;
-  text-align:left;
-  border-radius:17px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(100,170,255,.27),
-      rgba(80,120,210,.12)
-    );
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.info-item b{
-  display:block;
-  margin-bottom:5px;
-  font-size:17px;
-}
-
-.info-item span{
-  color:#e8f5ff;
-  font-size:17px;
-}
-
-/* MADRE Y PADRINOS */
-.people{
-  display:grid;
-  gap:28px;
-}
-
-.people h3{
-  margin:0 0 10px;
-  font-size:19px;
-  letter-spacing:4px;
-  color:#8fefff;
-  text-transform:uppercase;
-}
-
-.people p{
-  margin:0;
-  font-size:23px;
-  line-height:1.45;
-  font-weight:700;
-}
-
-/* CONFIRMAR */
-.confirm{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 30px;
-  border:2px solid var(--cyan);
-  border-radius:999px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  background:rgba(0,126,255,.18);
-  box-shadow:0 0 18px rgba(34,231,255,.4);
-}
-
-.confirm:hover{
-  background:rgba(0,174,255,.3);
-}
-
-/* PIE */
-.footer{
-  margin:32px 0 10px;
-  letter-spacing:4px;
-  font-size:13px;
-  color:#bfefff;
-}
-
-/* CELULAR */
-@media(max-width:600px){
-
-  .page{
-    padding:70px 0 35px;
-  }
-
-  .hero-card{
-    padding:38px 18px 32px;
-  }
-
-  .kicker{
-    font-size:14px;
-    letter-spacing:4px;
-  }
-
-  .countdown{
+.details{
+    display:grid;
     grid-template-columns:repeat(2,1fr);
-  }
-
-  .section{
-    padding:28px 15px;
-  }
-
-  .message{
-    font-size:17px;
-  }
-
-  .music-wrap{
-    top:10px;
-    right:10px;
-  }
+    gap:15px;
 }
+
+.detail{
+    padding:22px;
+    border-radius:20px;
+    background:rgba(11,18,34,.85);
+    border:1px solid rgba(34,231,255,.18);
+    text-align:center;
+}
+
+.detail-title{
+    color:#62e8ff;
+    font:bold 13px Arial,sans-serif;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.detail-text{
+    color:#e5edff;
+    font-size:18px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    text-align:center;
+    padding:55px 20px 20px;
+}
+
+.final h2{
+    font-size:35px;
+    font-weight:400;
+    letter-spacing:4px;
+}
+
+.final p{
+    margin-top:15px;
+    color:#9daecc;
+    font-size:16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:650px){
+
+    .page{
+        width:94%;
+        padding-top:90px;
+    }
+
+    .music-wrap{
+        top:12px;
+        right:12px;
+    }
+
+    .music-btn{
+        padding:11px 15px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding-top:20px;
+    }
+
+    .hero-card{
+        padding:45px 18px;
+    }
+
+    h1{
+        font-size:45px;
+        letter-spacing:5px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+    .section{
+        padding:28px 18px;
+    }
+
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    .text{
+        font-size:16px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
+
+<div class="stars" aria-hidden="true">
+    <span class="star" style="top:8%;left:12%;"></span>
+    <span class="star" style="top:16%;left:75%;"></span>
+    <span class="star" style="top:27%;left:35%;"></span>
+    <span class="star" style="top:42%;left:88%;"></span>
+    <span class="star" style="top:55%;left:18%;"></span>
+    <span class="star" style="top:68%;left:72%;"></span>
+    <span class="star" style="top:81%;left:42%;"></span>
+    <span class="star" style="top:91%;left:90%;"></span>
+</div>
 
 <!-- =========================
      BOTÓN DE MÚSICA
@@ -398,524 +425,408 @@ h1{
 
 <div class="music-wrap">
 
-  <button
-    class="music-btn"
-    id="musicBtn"
-    type="button"
-  >
-    ▶ REPRODUCIR MÚSICA
-  </button>
+    <button
+        class="music-btn"
+        id="musicBtn"
+        type="button"
+    >
+        ▶ REPRODUCIR MÚSICA
+    </button>
 
-  <div
-    class="music-status"
-    id="musicStatus"
-  ></div>
+    <div
+        class="music-status"
+        id="musicStatus"
+    ></div>
 
 </div>
 
 <!-- =========================
-     MÚSICA
+     AUDIO
 ========================= -->
 
 <audio
-  id="musicAudio"
-  loop
-  preload="metadata"
+    id="musicAudio"
+    loop
+    preload="metadata"
 >
-
-  <source
-    src="musica.mp3"
-    type="audio/mpeg"
-  >
-
-  Tu navegador no puede reproducir audio.
-
+    <source
+        src="musica.mp3"
+        type="audio/mpeg"
+    >
+    Tu navegador no puede reproducir audio.
 </audio>
-
 
 <main class="page">
 
-<!-- =========================
-     PORTADA
-========================= -->
+    <!-- =========================
+         PORTADA
+    ========================= -->
 
-<section class="hero">
+    <section class="hero">
 
-  <div class="hero-card">
+        <div class="hero-card">
 
-    <div
-      class="diamonds"
-      aria-hidden="true"
-    >
+            <div class="kicker">
+                UNA NOCHE ESPECIAL
+            </div>
 
-      <span class="diamond"></span>
+            <h1>MIS XV</h1>
 
-      <span class="diamond big"></span>
+            <div class="divider"></div>
 
-      <span class="diamond"></span>
+            <p class="subtitle">
+                Edgar Tadeo Fernández Esparza
+            </p>
 
-    </div>
+            <p class="date">
+                LLENA DE MÚSICA, LUCES Y BUENOS MOMENTOS
+            </p>
 
+            <div class="photo-box">
 
-    <div class="kicker">
-      Estás invitado
-    </div>
+                <img
+                    class="photo"
+                    src="foto.jpg"
+                    alt="Edgar Tadeo"
+                    onerror="this.style.display='none'; document.getElementById('photoError').style.display='block';"
+                >
 
+                <p
+                    id="photoError"
+                    style="display:none;color:#ff8c8c;font-family:Arial,sans-serif;margin-top:15px;"
+                >
+                    ⚠️ No se encontró foto.jpg
+                </p>
 
-    <h1>
-      MIS XV
-    </h1>
+            </div>
 
+        </div>
 
-    <div class="name">
-      Edgar Tadeo Fernández Esparza
-    </div>
+    </section>
 
+    <!-- =========================
+         MENSAJE
+    ========================= -->
 
-    <div class="cyan-line"></div>
+    <section class="section">
 
+        <h2 class="section-title">
+            Una noche para recordar
+        </h2>
 
-    <p class="message">
+        <p class="text">
+            Hay momentos que merecen quedarse para siempre.
+            Esta celebración está llena de música, luces,
+            alegría y personas especiales que hacen que
+            esta noche sea inolvidable.
+        </p>
 
-      Te invito a compartir conmigo<br>
+    </section>
 
-      una noche especial<br>
+    <!-- =========================
+         CUENTA REGRESIVA
+    ========================= -->
 
-      llena de música, luces y buenos momentos.
+    <section class="section">
 
-    </p>
+        <h2 class="section-title">
+            Cuenta regresiva
+        </h2>
 
+        <div class="countdown">
 
-    <img
-      class="photo"
-      src="foto.jpg"
-      alt="Edgar Tadeo"
-      onerror="this.style.display='none';"
-    >
+            <div class="count-box">
+                <strong id="days">00</strong>
+                <span>Días</span>
+            </div>
 
-  </div>
+            <div class="count-box">
+                <strong id="hours">00</strong>
+                <span>Horas</span>
+            </div>
 
-</section>
+            <div class="count-box">
+                <strong id="minutes">00</strong>
+                <span>Minutos</span>
+            </div>
 
+            <div class="count-box">
+                <strong id="seconds">00</strong>
+                <span>Segundos</span>
+            </div>
 
-<!-- =========================
-     CUENTA REGRESIVA
-========================= -->
+        </div>
 
-<section class="section">
+    </section>
 
-  <h2 class="section-title">
-    Cuenta regresiva
-  </h2>
+    <!-- =========================
+         INFORMACIÓN
+    ========================= -->
 
+    <section class="section">
 
-  <div class="countdown">
+        <h2 class="section-title">
+            Detalles
+        </h2>
 
-    <div class="count-box">
+        <div class="details">
 
-      <strong id="months">
-        --
-      </strong>
+            <div class="detail">
 
-      <span>
-        MESES
-      </span>
+                <div class="detail-title">
+                    Celebración
+                </div>
 
-    </div>
+                <div class="detail-text">
+                    Mis XV Años
+                </div>
 
+            </div>
 
-    <div class="count-box">
+            <div class="detail">
 
-      <strong id="days">
-        --
-      </strong>
+                <div class="detail-title">
+                    Música
+                </div>
 
-      <span>
-        DÍAS
-      </span>
+                <div class="detail-text">
+                    Una noche inolvidable
+                </div>
 
-    </div>
+            </div>
 
+            <div class="detail">
 
-    <div class="count-box">
+                <div class="detail-title">
+                    Invitados
+                </div>
 
-      <strong id="hours">
-        --
-      </strong>
+                <div class="detail-text">
+                    Familia y amigos
+                </div>
 
-      <span>
-        HORAS
-      </span>
+            </div>
 
-    </div>
+            <div class="detail">
 
+                <div class="detail-title">
+                    Momento
+                </div>
 
-    <div class="count-box">
+                <div class="detail-text">
+                    Para recordar siempre
+                </div>
 
-      <strong id="seconds">
-        --
-      </strong>
+            </div>
 
-      <span>
-        SEGUNDOS
-      </span>
+        </div>
 
-    </div>
+    </section>
 
-  </div>
+    <!-- =========================
+         FINAL
+    ========================= -->
 
-</section>
+    <section class="final">
 
+        <h2>
+            Gracias por compartir esta noche
+        </h2>
 
-<!-- =========================
-     DATOS DEL EVENTO
-========================= -->
+        <p>
+            ✦ Música · Luces · Recuerdos · Alegría ✦
+        </p>
 
-<section class="section">
-
-  <h2 class="section-title">
-    Black &amp; Crown
-  </h2>
-
-
-  <div class="info">
-
-
-    <div class="info-item">
-
-      <b>
-        📅 FECHA
-      </b>
-
-      <span>
-        17 de julio de 2027
-      </span>
-
-    </div>
-
-
-    <div class="info-item">
-
-      <b>
-        🕐 HORA
-      </b>
-
-      <span>
-        7:00 p. m.
-      </span>
-
-    </div>
-
-
-    <div class="info-item">
-
-      <b>
-        📍 LUGAR
-      </b>
-
-      <span>
-        San Nicolas Terraza &amp; Jardín
-      </span>
-
-    </div>
-
-
-    <div class="info-item">
-
-      <b>
-        🎉 RECEPCIÓN
-      </b>
-
-      <span>
-        30–50 invitados · DJ · banda · cena · luces LED
-      </span>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FAMILIA
-========================= -->
-
-<section class="section">
-
-  <div class="people">
-
-
-    <div>
-
-      <h3>
-        Con el amor de mi madre
-      </h3>
-
-      <p>
-        Karla Karina<br>
-        Fernández Esparza
-      </p>
-
-    </div>
-
-
-    <div>
-
-      <h3>
-        Con el cariño de mis padrinos
-      </h3>
-
-      <p>
-        Ivonne<br>
-        &amp;<br>
-        Jesús
-      </p>
-
-    </div>
-
-
-  </div>
-
-
-  <a
-    class="confirm"
-    href="mailto:?subject=Confirmación%20de%20asistencia%20-%20XV%20Edgar%20Tadeo&amp;body=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Edgar%20Tadeo."
-  >
-
-    💌 CONFIRMAR ASISTENCIA
-
-  </a>
-
-</section>
-
-
-<div class="footer">
-
-  UNA NOCHE · UN ESTILO · UN NUEVO CAPÍTULO
-
-</div>
+    </section>
 
 </main>
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* =========================
-   MÚSICA
-========================= */
+document.addEventListener("DOMContentLoaded", function(){
 
-const audio =
-  document.getElementById("musicAudio");
+    /* =========================
+       MÚSICA
+    ========================= */
 
-const musicBtn =
-  document.getElementById("musicBtn");
+    const musicBtn =
+        document.getElementById("musicBtn");
 
-const musicStatus =
-  document.getElementById("musicStatus");
+    const musicAudio =
+        document.getElementById("musicAudio");
 
-
-function setMusicState(playing){
-
-  musicBtn.textContent = playing
-    ? "⏸ PAUSAR MÚSICA"
-    : "▶ REPRODUCIR MÚSICA";
-
-}
+    const musicStatus =
+        document.getElementById("musicStatus");
 
 
-musicBtn.addEventListener(
-  "click",
-  async () => {
+    musicBtn.addEventListener("click", function(){
 
-    try{
+        if(musicAudio.paused){
 
-      if(audio.paused){
+            musicAudio.play()
+                .then(function(){
 
-        await audio.play();
+                    musicBtn.textContent =
+                        "⏸ PAUSAR MÚSICA";
 
-        setMusicState(true);
+                    musicStatus.textContent =
+                        "🎵 Música reproduciéndose";
 
-        musicStatus.style.display =
-          "none";
+                    musicStatus.style.display =
+                        "block";
 
-      }else{
+                })
+                .catch(function(error){
 
-        audio.pause();
+                    console.error(
+                        "Error reproduciendo música:",
+                        error
+                    );
 
-        setMusicState(false);
+                    musicStatus.textContent =
+                        "❌ No se encontró musica.mp3 o el navegador no puede reproducirla.";
 
-      }
+                    musicStatus.style.display =
+                        "block";
 
-    }catch(error){
+                });
 
-      musicStatus.textContent =
-        "No se encontró musica.mp3. Súbelo al mismo lugar que index.html.";
+        }else{
 
-      musicStatus.style.display =
-        "block";
+            musicAudio.pause();
 
-      setMusicState(false);
+            musicBtn.textContent =
+                "▶ REPRODUCIR MÚSICA";
+
+            musicStatus.textContent =
+                "⏸ Música pausada";
+
+            musicStatus.style.display =
+                "block";
+        }
+
+    });
+
+
+    /* =========================
+       SI EL AUDIO DA ERROR
+    ========================= */
+
+    musicAudio.addEventListener(
+        "error",
+        function(){
+
+            musicStatus.textContent =
+                "❌ No se pudo cargar musica.mp3";
+
+            musicStatus.style.display =
+                "block";
+
+        }
+    );
+
+
+    /* =========================
+       CUENTA REGRESIVA
+    ========================= */
+
+    /*
+       CAMBIA ESTA FECHA POR LA FECHA
+       REAL DE TUS XV.
+
+       Formato:
+       Año-Mes-Día Hora:Minuto:Segundo
+
+       Ejemplo:
+       "2026-12-20T20:00:00"
+    */
+
+    const fechaEvento =
+        new Date("2026-12-20T20:00:00").getTime();
+
+
+    function actualizarCuenta(){
+
+        const ahora =
+            new Date().getTime();
+
+        const diferencia =
+            fechaEvento - ahora;
+
+
+        if(diferencia <= 0){
+
+            document.getElementById("days").textContent =
+                "00";
+
+            document.getElementById("hours").textContent =
+                "00";
+
+            document.getElementById("minutes").textContent =
+                "00";
+
+            document.getElementById("seconds").textContent =
+                "00";
+
+            return;
+        }
+
+
+        const dias =
+            Math.floor(
+                diferencia /
+                (1000 * 60 * 60 * 24)
+            );
+
+        const horas =
+            Math.floor(
+                (diferencia %
+                (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+        const minutos =
+            Math.floor(
+                (diferencia %
+                (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+        const segundos =
+            Math.floor(
+                (diferencia %
+                (1000 * 60)) /
+                1000
+            );
+
+
+        document.getElementById("days").textContent =
+            String(dias).padStart(2,"0");
+
+        document.getElementById("hours").textContent =
+            String(horas).padStart(2,"0");
+
+        document.getElementById("minutes").textContent =
+            String(minutos).padStart(2,"0");
+
+        document.getElementById("seconds").textContent =
+            String(segundos).padStart(2,"0");
 
     }
 
-  }
-);
 
+    actualizarCuenta();
 
-audio.addEventListener(
-  "ended",
-  () => setMusicState(false)
-);
-
-
-audio.addEventListener(
-  "error",
-  () => {
-
-    musicStatus.textContent =
-      "Falta musica.mp3 o el nombre del archivo no coincide.";
-
-    musicStatus.style.display =
-      "block";
-
-  }
-);
-
-
-/* =========================
-   CUENTA REGRESIVA
-========================= */
-
-const target =
-  new Date("2027-07-17T19:00:00");
-
-
-function updateCountdown(){
-
-  const now =
-    new Date();
-
-  let diff =
-    target - now;
-
-
-  if(diff <= 0){
-
-    document.getElementById("months")
-      .textContent = "00";
-
-    document.getElementById("days")
-      .textContent = "00";
-
-    document.getElementById("hours")
-      .textContent = "00";
-
-    document.getElementById("seconds")
-      .textContent = "00";
-
-    return;
-
-  }
-
-
-  const totalSeconds =
-    Math.floor(diff / 1000);
-
-
-  const seconds =
-    totalSeconds % 60;
-
-
-  const totalHours =
-    Math.floor(totalSeconds / 3600);
-
-
-  const hours =
-    totalHours % 24;
-
-
-  const nowDate =
-    new Date(now);
-
-
-  let months =
-    (target.getFullYear() -
-      nowDate.getFullYear()) * 12
-    +
-    (target.getMonth() -
-      nowDate.getMonth());
-
-
-  const anniversary =
-    new Date(
-      nowDate.getFullYear(),
-      nowDate.getMonth() + months,
-      nowDate.getDate(),
-      nowDate.getHours(),
-      nowDate.getMinutes(),
-      nowDate.getSeconds()
+    setInterval(
+        actualizarCuenta,
+        1000
     );
 
-
-  if(anniversary > target){
-
-    months--;
-
-  }
-
-
-  const afterMonths =
-    new Date(
-      nowDate.getFullYear(),
-      nowDate.getMonth() + months,
-      nowDate.getDate(),
-      nowDate.getHours(),
-      nowDate.getMinutes(),
-      nowDate.getSeconds()
-    );
-
-
-  const remainingDays =
-    Math.floor(
-      (target - afterMonths) /
-      (1000 * 60 * 60 * 24)
-    );
-
-
-  document.getElementById("months")
-    .textContent =
-      String(Math.max(months,0))
-      .padStart(2,"0");
-
-
-  document.getElementById("days")
-    .textContent =
-      String(Math.max(remainingDays,0))
-      .padStart(2,"0");
-
-
-  document.getElementById("hours")
-    .textContent =
-      String(hours)
-      .padStart(2,"0");
-
-
-  document.getElementById("seconds")
-    .textContent =
-      String(seconds)
-      .padStart(2,"0");
-
-}
-
-
-updateCountdown();
-
-setInterval(
-  updateCountdown,
-  1000
-);
+});
 
 </script>
 

@@ -1,390 +1,455 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mis XV Años — Karla Karina Fernández Esparza</title>
+<title>Mis XV Años — Edgar Tadeo Fernández Esparza</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, #18213d 0%, #080b15 42%, #020308 100%);
-      color: #f5f7ff;
-      font-family: Georgia, "Times New Roman", serif;
-      overflow-x: hidden;
-    }
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 0%, #17233d 0%, #080b14 42%, #020307 100%);
+    color:#f1f5ff;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow-x:hidden;
+}
 
-    /* =========================
-       FONDO
-    ========================= */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,150,255,.08),transparent 25%),
+        radial-gradient(circle at 80% 70%,rgba(120,0,255,.08),transparent 30%);
+    z-index:-2;
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(34, 231, 255, 0.08), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(160, 70, 255, 0.08), transparent 30%);
-      z-index: -1;
-    }
+.page{
+    width:min(920px,92%);
+    margin:auto;
+    padding:28px 0 80px;
+}
 
-    .page {
-      width: min(920px, 92%);
-      margin: 0 auto;
-      padding: 25px 0 60px;
-    }
+/* =========================
+   MÚSICA
+========================= */
 
-    /* =========================
-       BOTÓN DE MÚSICA
-    ========================= */
+.music-wrap{
+    position:fixed;
+    top:18px;
+    right:18px;
+    z-index:1000;
+}
 
-    .music-wrap {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      z-index: 1000;
-    }
+.music-btn{
+    border:1px solid #23d9ff;
+    border-radius:999px;
+    padding:13px 20px;
+    color:#fff;
+    background:rgba(2,8,20,.94);
+    box-shadow:
+        0 0 18px rgba(34,231,255,.45),
+        inset 0 0 15px rgba(34,231,255,.08);
+    font:bold 14px Arial,sans-serif;
+    cursor:pointer;
+    transition:.25s ease;
+}
 
-    .music-btn {
-      border: 1px solid rgba(34, 231, 255, 0.7);
-      border-radius: 999px;
-      padding: 13px 19px;
-      color: #ffffff;
-      background: rgba(2, 8, 20, 0.94);
-      box-shadow:
-        0 0 18px rgba(34, 231, 255, 0.28),
-        inset 0 0 12px rgba(34, 231, 255, 0.06);
-      font: 700 14px Arial, sans-serif;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
+.music-btn:hover{
+    transform:translateY(-2px);
+    background:rgba(0,70,120,.6);
+    box-shadow:0 0 30px rgba(34,231,255,.8);
+}
 
-    .music-btn:hover {
-      transform: scale(1.04);
-      background: rgba(10, 25, 50, 0.98);
-      box-shadow:
-        0 0 28px rgba(34, 231, 255, 0.55),
-        inset 0 0 15px rgba(34, 231, 255, 0.1);
-    }
+.music-status{
+    display:none;
+    margin-top:8px;
+    padding:8px 12px;
+    border-radius:10px;
+    background:rgba(0,0,0,.8);
+    border:1px solid rgba(34,231,255,.35);
+    font:12px Arial,sans-serif;
+    color:#dffaff;
+    text-align:center;
+}
 
-    .music-status {
-      display: none;
-      margin-top: 7px;
-      text-align: center;
-      color: #9ff7ff;
-      font: 12px Arial, sans-serif;
-    }
+/* =========================
+   PORTADA
+========================= */
 
-    /* =========================
-       PORTADA
-    ========================= */
+.hero{
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
 
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero-card {
-      width: 100%;
-      padding: 55px 28px;
-      border: 1px solid rgba(34, 231, 255, 0.35);
-      border-radius: 32px;
-      background:
+.hero-card{
+    width:100%;
+    padding:55px 28px;
+    border-radius:34px;
+    background:
         linear-gradient(
-          145deg,
-          rgba(15, 23, 45, 0.96),
-          rgba(3, 7, 18, 0.98)
+            145deg,
+            rgba(20,30,55,.95),
+            rgba(4,7,16,.97)
         );
-      box-shadow:
-        0 0 45px rgba(0, 0, 0, 0.75),
-        0 0 30px rgba(34, 231, 255, 0.08);
-    }
+    border:1px solid rgba(34,231,255,.35);
+    box-shadow:
+        0 0 50px rgba(0,160,255,.12),
+        inset 0 0 35px rgba(0,140,255,.05);
+}
 
-    .small-text {
-      color: #9ff7ff;
-      font: 700 14px Arial, sans-serif;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
+.kicker{
+    color:#63eaff;
+    letter-spacing:7px;
+    font:700 13px Arial,sans-serif;
+    margin-bottom:25px;
+}
 
-    h1 {
-      font-size: clamp(44px, 9vw, 82px);
-      line-height: 0.95;
-      font-weight: 400;
-      color: #ffffff;
-      text-shadow:
-        0 0 15px rgba(255, 255, 255, 0.15),
-        0 0 35px rgba(34, 231, 255, 0.2);
-    }
+h1{
+    font-size:clamp(48px,9vw,86px);
+    letter-spacing:8px;
+    font-weight:400;
+    margin-bottom:15px;
+    text-shadow:0 0 15px rgba(34,231,255,.35);
+}
 
-    .name {
-      margin-top: 22px;
-      color: #9ff7ff;
-      font-size: clamp(28px, 5vw, 48px);
-      line-height: 1.15;
-      font-weight: 400;
-    }
+.subtitle{
+    font-size:clamp(18px,3vw,25px);
+    color:#d7e4ff;
+    margin-bottom:30px;
+}
 
-    .divider {
-      width: 120px;
-      height: 1px;
-      margin: 30px auto;
-      background: linear-gradient(
+.divider{
+    width:150px;
+    height:1px;
+    margin:25px auto;
+    background:linear-gradient(
         90deg,
         transparent,
-        #9ff7ff,
+        #39ddff,
         transparent
-      );
-      box-shadow: 0 0 12px #22e7ff;
-    }
+    );
+}
 
-    .hero-message {
-      max-width: 650px;
-      margin: 0 auto;
-      color: #d8e0f2;
-      font-size: 18px;
-      line-height: 1.8;
-    }
+.date{
+    font:700 16px Arial,sans-serif;
+    letter-spacing:3px;
+    color:#9deeff;
+}
 
-    /* =========================
-       SECCIONES
-    ========================= */
+/* =========================
+   FOTO
+========================= */
 
-    .section {
-      margin-top: 35px;
-      padding: 38px 25px;
-      border: 1px solid rgba(34, 231, 255, 0.2);
-      border-radius: 28px;
-      background: rgba(4, 10, 24, 0.82);
-      box-shadow:
-        inset 0 0 25px rgba(0, 150, 255, 0.04),
-        0 20px 50px rgba(0, 0, 0, 0.3);
-      text-align: center;
-    }
+.photo-box{
+    margin-top:35px;
+}
 
-    .section-title {
-      margin-bottom: 25px;
-      color: #ffffff;
-      font-size: 26px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
+.photo{
+    display:block;
+    width:100%;
+    max-width:560px;
+    max-height:700px;
+    object-fit:cover;
+    margin:0 auto;
+    border-radius:28px;
+    border:2px solid rgba(34,231,255,.55);
+    box-shadow:0 0 35px rgba(0,173,255,.22);
+}
 
-    /* =========================
-       FRASE MOTIVADORA
-    ========================= */
+/* =========================
+   SECCIONES
+========================= */
 
-    .quote {
-      padding: 25px 10px;
-      color: #e8faff;
-      font-size: clamp(20px, 4vw, 30px);
-      line-height: 1.55;
-      font-style: italic;
-      text-shadow: 0 0 18px rgba(34, 231, 255, 0.15);
-    }
+.section{
+    margin-top:35px;
+    padding:35px 25px;
+    border-radius:28px;
+    background:rgba(5,10,22,.82);
+    border:1px solid rgba(34,231,255,.22);
+    box-shadow:inset 0 0 25px rgba(0,140,255,.045);
+}
 
-    /* =========================
-       FOTO
-    ========================= */
+.section-title{
+    text-align:center;
+    font-size:25px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:#eafcff;
+    margin-bottom:25px;
+}
 
-    .photo {
-      width: 100%;
-      max-width: 560px;
-      margin: 20px auto 0;
-      display: block;
-      border-radius: 28px;
-      border: 2px solid rgba(34, 231, 255, 0.55);
-      box-shadow:
-        0 0 35px rgba(0, 173, 255, 0.18),
-        0 20px 45px rgba(0, 0, 0, 0.6);
-    }
+.text{
+    max-width:720px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+    color:#cbd8ef;
+}
 
-    /* =========================
-       MENSAJES
-    ========================= */
+/* =========================
+   FRASE
+========================= */
 
-    .message {
-      color: #dbe4f6;
-      font-size: 18px;
-      line-height: 1.8;
-      margin-top: 15px;
-    }
+.quote{
+    max-width:760px;
+    margin:auto;
+    padding:10px 5px;
+    text-align:center;
+}
 
-    .highlight {
-      color: #9ff7ff;
-      font-weight: bold;
-    }
+.quote p{
+    color:#eef8ff;
+    font-size:20px;
+    line-height:1.9;
+    font-style:italic;
+}
 
-    /* =========================
-       FAMILIA
-    ========================= */
+.quote p + p{
+    margin-top:18px;
+}
 
-    .family-box {
-      margin-top: 25px;
-      padding: 25px;
-      border-radius: 20px;
-      background: rgba(13, 20, 42, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+/* =========================
+   DETALLES
+========================= */
 
-    .family-box p {
-      margin: 12px 0;
-      color: #e5e9f5;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.details{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
 
-    /* =========================
-       CONFIRMAR
-    ========================= */
+.detail{
+    padding:22px;
+    border-radius:20px;
+    background:rgba(11,18,34,.85);
+    border:1px solid rgba(34,231,255,.18);
+    text-align:center;
+}
 
-    .confirm-section {
-      padding-bottom: 50px;
-    }
+.detail-title{
+    color:#62e8ff;
+    font:bold 13px Arial,sans-serif;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
 
-    .confirm-text {
-      color: #cfd8ea;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
+.detail-text{
+    color:#e5edff;
+    font-size:18px;
+}
 
-    .confirm-btn {
-      display: inline-block;
-      border: 1px solid #9ff7ff;
-      border-radius: 999px;
-      padding: 15px 30px;
-      color: #ffffff;
-      background:
+/* =========================
+   FAMILIA — AL FINAL
+========================= */
+
+.family-box{
+    display:grid;
+    gap:18px;
+}
+
+.family-card{
+    padding:25px 20px;
+    border-radius:20px;
+    background:rgba(11,18,34,.85);
+    border:1px solid rgba(34,231,255,.2);
+    text-align:center;
+}
+
+.family-card strong{
+    display:block;
+    color:#62e8ff;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.family-card span{
+    color:#f0f5ff;
+    font-size:21px;
+}
+
+/* =========================
+   CONFIRMAR
+========================= */
+
+.confirm{
+    margin-top:35px;
+    padding:45px 25px;
+    text-align:center;
+    border-radius:30px;
+    border:1px solid rgba(34,231,255,.4);
+    background:
         linear-gradient(
-          135deg,
-          rgba(10, 100, 140, 0.55),
-          rgba(60, 20, 100, 0.55)
+            145deg,
+            rgba(8,25,47,.95),
+            rgba(2,8,18,.98)
         );
-      box-shadow:
-        0 0 25px rgba(34, 231, 255, 0.2);
-      font: 700 15px Arial, sans-serif;
-      text-decoration: none;
-      cursor: pointer;
-      transition: 0.25s ease;
+}
+
+.confirm h2{
+    font-size:28px;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.confirm p{
+    color:#aebdd1;
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+.confirm-btn{
+    display:inline-block;
+    border:1px solid #64eaff;
+    border-radius:999px;
+    padding:15px 30px;
+    background:rgba(7,72,105,.7);
+    color:#fff;
+    font:bold 15px Arial,sans-serif;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(0,180,255,.3);
+    transition:.3s;
+}
+
+.confirm-btn:hover{
+    transform:translateY(-2px) scale(1.03);
+    background:rgba(8,120,165,.8);
+    box-shadow:0 0 35px rgba(0,200,255,.55);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    margin-top:45px;
+    color:#62748e;
+    font:12px Arial,sans-serif;
+    letter-spacing:2px;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media(max-width:650px){
+
+    .page{
+        width:94%;
+        padding-top:85px;
     }
 
-    .confirm-btn:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        0 0 35px rgba(34, 231, 255, 0.45);
+    .music-wrap{
+        top:12px;
+        right:12px;
     }
 
-    /* =========================
-       PIE
-    ========================= */
-
-    footer {
-      text-align: center;
-      margin-top: 35px;
-      color: #74809a;
-      font: 13px Arial, sans-serif;
+    .music-btn{
+        padding:11px 15px;
+        font-size:12px;
     }
 
-    /* =========================
-       MÓVIL
-    ========================= */
-
-    @media (max-width: 600px) {
-      .page {
-        width: 94%;
-      }
-
-      .music-wrap {
-        top: 10px;
-        right: 10px;
-      }
-
-      .music-btn {
-        padding: 11px 14px;
-        font-size: 12px;
-      }
-
-      .hero-card {
-        padding: 45px 18px;
-      }
-
-      .section {
-        padding: 30px 18px;
-      }
-
-      .hero-message,
-      .message,
-      .family-box p {
-        font-size: 16px;
-      }
+    .hero{
+        min-height:auto;
+        padding-top:20px;
     }
-  </style>
+
+    .hero-card{
+        padding:45px 18px;
+    }
+
+    h1{
+        font-size:45px;
+        letter-spacing:5px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+    .section{
+        padding:28px 18px;
+    }
+
+    .text{
+        font-size:16px;
+    }
+
+    .quote p{
+        font-size:17px;
+        line-height:1.8;
+    }
+
+    .details{
+        grid-template-columns:1fr;
+    }
+
+    .family-card span{
+        font-size:18px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       BOTÓN DE MÚSICA
-  ========================= -->
+<!-- =========================
+     BOTÓN MÚSICA
+========================= -->
 
-  <div class="music-wrap">
+<div class="music-wrap">
 
     <button
-      class="music-btn"
-      id="musicBtn"
-      type="button"
-      onclick="toggleMusic()"
-    >
-      ▶ REPRODUCIR MÚSICA
+        class="music-btn"
+        id="musicBtn"
+        type="button">
+        ▶ REPRODUCIR MÚSICA
     </button>
 
     <div
-      class="music-status"
-      id="musicStatus"
-    >
-      Música reproduciéndose ♪
+        class="music-status"
+        id="musicStatus">
     </div>
 
-  </div>
+</div>
 
+<!-- =========================
+     AUDIO
+========================= -->
 
-  <!-- =========================
-       AUDIO
-  ========================= -->
-
-  <audio
+<audio
     id="musicAudio"
     loop
-    preload="auto"
-  >
+    preload="auto">
+    
     <source
-      src="musica.mp3"
-      type="audio/mpeg"
-    >
+        src="./musica.mp3"
+        type="audio/mpeg">
 
     Tu navegador no puede reproducir audio.
-  </audio>
+</audio>
 
 
-  <main class="page">
+<main class="page">
 
     <!-- =========================
          PORTADA
@@ -392,210 +457,448 @@
 
     <section class="hero">
 
-      <div class="hero-card">
+        <div class="hero-card">
 
-        <div class="small-text">
-          Mis XV Años
+            <div class="kicker">
+                MIS XV AÑOS
+            </div>
+
+            <h1>
+                UNA NOCHE
+                <br>
+                ESPECIAL
+            </h1>
+
+            <div class="divider"></div>
+
+            <p class="subtitle">
+                Edgar Tadeo Fernández Esparza
+            </p>
+
+            <p class="date">
+                UNA NOCHE LLENA DE MÚSICA,
+                LUCES Y MOMENTOS INOLVIDABLES
+            </p>
+
+            <div class="photo-box">
+
+                <img
+                    class="photo"
+                    src="./foto.jpg"
+                    alt="Edgar Tadeo Fernández Esparza">
+
+            </div>
+
         </div>
 
-        <h1>
-          Una noche
-          <br>
-          para recordar
-        </h1>
+    </section>
 
-        <div class="name">
-          Karla Karina
-          <br>
-          Fernández Esparza
+
+    <!-- =========================
+         MENSAJE
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Una noche para recordar
+        </h2>
+
+        <p class="text">
+            Hay momentos que merecen quedarse
+            para siempre. Esta celebración es una
+            oportunidad para compartir alegría,
+            recuerdos y momentos especiales con
+            las personas que más quiero.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FRASE QUE MANDASTE
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Una frase para recordar
+        </h2>
+
+        <div class="quote">
+
+            <p>
+                Porque cada día de mi vida ha sido un regalo,
+                y en cada paso he encontrado amor, cuidado y bendiciones.
+            </p>
+
+            <p>
+                Doy gracias a Dios por permitirme llegar hasta este día,
+                por la familia que me ha acompañado desde mis primeros pasos,
+                por las manos que me han cuidado,
+                por las palabras que me han enseñado
+                y por cada corazón que ha estado a mi lado.
+            </p>
+
+            <p>
+                Hoy miro hacia atrás con gratitud,
+                porque sé que no he caminado sola.
+                Y miro hacia adelante con esperanza,
+                con el corazón lleno de sueños y la certeza
+                de que Dios seguirá guiando mi camino.
+            </p>
+
+            <p>
+                Que nunca me falte amor para agradecer,
+                valor para seguir adelante
+                y fe para confiar en lo que está por venir.
+            </p>
+
+            <p>
+                Hoy celebro mis quince años,
+                pero sobre todo celebro la vida,
+                a quienes la han llenado de amor
+                y la bendición de poder compartir este momento
+                con las personas que más quiero.
+            </p>
+
         </div>
 
-        <div class="divider"></div>
+    </section>
 
-        <p class="hero-message">
-          Hay momentos que se quedan para siempre
-          en el corazón. Hoy quiero compartir contigo
-          uno de los más importantes de mi vida.
-        </p>
 
-      </div>
+    <!-- =========================
+         CRONÓMETRO
+    ========================= -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Cuenta regresiva
+        </h2>
+
+        <div class="details">
+
+            <div class="detail">
+                <div class="detail-title">Días</div>
+                <div class="detail-text" id="days">00</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Horas</div>
+                <div class="detail-text" id="hours">00</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Minutos</div>
+                <div class="detail-text" id="minutes">00</div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Segundos</div>
+                <div class="detail-text" id="seconds">00</div>
+            </div>
+
+        </div>
 
     </section>
 
 
     <!-- =========================
-         FRASE
+         FECHA / HORA / LUGAR /
+         VESTIMENTA
+         
+         AQUÍ DEBES CONSERVAR
+         TUS DATOS ORIGINALES.
     ========================= -->
 
     <section class="section">
 
-      <h2 class="section-title">
-        Una frase para recordar
-      </h2>
+        <h2 class="section-title">
+            Detalles del evento
+        </h2>
 
-      <p class="quote">
-        “Nunca dejes de soñar, porque cada sueño
-        puede convertirse en el comienzo de una
-        historia maravillosa.”
-      </p>
+        <div class="details">
+
+            <div class="detail">
+                <div class="detail-title">Fecha</div>
+                <div class="detail-text">
+                    <!-- CONSERVA AQUÍ TU FECHA ORIGINAL -->
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Hora</div>
+                <div class="detail-text">
+                    <!-- CONSERVA AQUÍ TU HORA ORIGINAL -->
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Lugar</div>
+                <div class="detail-text">
+                    <!-- CONSERVA AQUÍ TU LUGAR ORIGINAL -->
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="detail-title">Código de vestimenta</div>
+                <div class="detail-text">
+                    <!-- CONSERVA AQUÍ TU CÓDIGO ORIGINAL -->
+                </div>
+            </div>
+
+        </div>
 
     </section>
 
 
     <!-- =========================
-         FOTO
+         FAMILIA — ÚLTIMO
     ========================= -->
 
     <section class="section">
 
-      <h2 class="section-title">
-        Un momento especial
-      </h2>
+        <h2 class="section-title">
+            Con amor
+        </h2>
 
-      <img
-        class="photo"
-        src="foto.jpg"
-        alt="Karla Karina Fernández Esparza"
-        onerror="this.style.display='none';"
-      >
+        <div class="family-box">
 
-      <p class="message">
-        Con mucha ilusión quiero compartir
-        esta noche tan especial contigo.
-      </p>
+            <div class="family-card">
 
-    </section>
+                <strong>
+                    Con el amor de mi madre
+                </strong>
 
+                <span>
+                    Karla Karina Fernández Esparza
+                </span>
 
-    <!-- =========================
-         FAMILIA
-    ========================= -->
+            </div>
 
-    <section class="section">
+            <div class="family-card">
 
-      <h2 class="section-title">
-        Con cariño
-      </h2>
+                <strong>
+                    Con el cariño de mis padrinos
+                </strong>
 
-      <div class="family-box">
+                <span>
+                    Ivonne y Jesús
+                </span>
 
-        <p>
-          Con el amor de mi madre,
-          <br>
-          <span class="highlight">
-            Carla Karina Fernández Esparza
-          </span>
-        </p>
+            </div>
 
-        <p>
-          Con el cariño de mis padrinos,
-          <br>
-          <span class="highlight">
-            Ivonne y Jesús
-          </span>
-        </p>
-
-      </div>
+        </div>
 
     </section>
 
 
     <!-- =========================
          CONFIRMAR ASISTENCIA
+         ÚLTIMO ELEMENTO
     ========================= -->
 
-    <section class="section confirm-section">
+    <section class="confirm">
 
-      <h2 class="section-title">
-        Confirmar asistencia
-      </h2>
+        <h2>
+            Confirmar asistencia
+        </h2>
 
-      <p class="confirm-text">
-        Será un honor contar con tu presencia
-        en este día tan especial.
-      </p>
+        <p>
+            Será un honor contar con tu presencia
+            en este momento tan especial.
+        </p>
 
-      <a
-        class="confirm-btn"
-        href="#"
-        onclick="confirmarAsistencia(event)"
-      >
-        CONFIRMAR ASISTENCIA
-      </a>
+        <button
+            class="confirm-btn"
+            id="confirmBtn"
+            type="button">
+
+            CONFIRMAR ASISTENCIA
+
+        </button>
 
     </section>
 
 
     <footer>
-      Con cariño, Karla Karina Fernández Esparza ♡
+        MIS XV AÑOS · EDGAR TADEO FERNÁNDEZ ESPARZA
     </footer>
 
-  </main>
+</main>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+<script>
 
-  <script>
+/* =========================
+   MÚSICA
+========================= */
 
-    const musicAudio = document.getElementById("musicAudio");
-    const musicBtn = document.getElementById("musicBtn");
-    const musicStatus = document.getElementById("musicStatus");
+const musicBtn =
+    document.getElementById("musicBtn");
+
+const musicAudio =
+    document.getElementById("musicAudio");
+
+const musicStatus =
+    document.getElementById("musicStatus");
 
 
-    async function toggleMusic() {
+musicBtn.addEventListener("click", async function(){
 
-      try {
+    try{
 
-        if (musicAudio.paused) {
+        if(musicAudio.paused){
 
-          await musicAudio.play();
+            await musicAudio.play();
 
-          musicBtn.innerHTML = "❚❚ PAUSAR MÚSICA";
+            musicBtn.textContent =
+                "⏸ PAUSAR MÚSICA";
 
-          musicStatus.style.display = "block";
-          musicStatus.innerHTML = "Música reproduciéndose ♪";
+            musicStatus.textContent =
+                "🎵 Música reproduciéndose";
 
-        } else {
+            musicStatus.style.display =
+                "block";
 
-          musicAudio.pause();
+        }else{
 
-          musicBtn.innerHTML = "▶ REPRODUCIR MÚSICA";
+            musicAudio.pause();
 
-          musicStatus.style.display = "block";
-          musicStatus.innerHTML = "Música pausada";
+            musicBtn.textContent =
+                "▶ REPRODUCIR MÚSICA";
+
+            musicStatus.textContent =
+                "⏸ Música pausada";
 
         }
 
-      } catch (error) {
+    }catch(error){
 
-        musicStatus.style.display = "block";
+        musicStatus.textContent =
+            "❌ No se pudo cargar musica.mp3";
 
-        musicStatus.innerHTML =
-          "No se pudo reproducir. Revisa que musica.mp3 esté en GitHub.";
+        musicStatus.style.display =
+            "block";
 
-        console.error(
-          "Error al reproducir música:",
-          error
+        console.error(error);
+
+    }
+
+});
+
+
+/* =========================
+   CUENTA REGRESIVA
+
+   IMPORTANTE:
+   Conserva aquí la fecha/hora
+   que ya tenías en tu código.
+========================= */
+
+/*
+   PON AQUÍ EXACTAMENTE LA MISMA
+   FECHA QUE YA TENÍAS.
+*/
+
+const fechaEvento =
+    new Date("2026-12-20T20:00:00").getTime();
+
+
+function actualizarCuenta(){
+
+    const ahora =
+        new Date().getTime();
+
+    const diferencia =
+        fechaEvento - ahora;
+
+
+    if(diferencia <= 0){
+
+        document.getElementById("days").textContent =
+            "00";
+
+        document.getElementById("hours").textContent =
+            "00";
+
+        document.getElementById("minutes").textContent =
+            "00";
+
+        document.getElementById("seconds").textContent =
+            "00";
+
+        return;
+
+    }
+
+
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24)
         );
 
-      }
+    const horas =
+        Math.floor(
+            (diferencia %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
 
-    }
+    const minutos =
+        Math.floor(
+            (diferencia %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+    const segundos =
+        Math.floor(
+            (diferencia %
+            (1000 * 60)) /
+            1000
+        );
 
 
-    function confirmarAsistencia(event) {
+    document.getElementById("days").textContent =
+        String(dias).padStart(2,"0");
 
-      event.preventDefault();
+    document.getElementById("hours").textContent =
+        String(horas).padStart(2,"0");
 
-      alert(
-        "¡Gracias por confirmar tu asistencia a los XV años de Karla Karina Fernández Esparza! 💙"
-      );
+    document.getElementById("minutes").textContent =
+        String(minutos).padStart(2,"0");
 
-    }
+    document.getElementById("seconds").textContent =
+        String(segundos).padStart(2,"0");
 
-  </script>
+}
+
+
+actualizarCuenta();
+
+setInterval(
+    actualizarCuenta,
+    1000
+);
+
+
+/* =========================
+   CONFIRMAR ASISTENCIA
+========================= */
+
+document.getElementById("confirmBtn")
+.addEventListener("click", function(){
+
+    alert(
+        "¡Gracias por confirmar tu asistencia! 💙"
+    );
+
+});
+
+</script>
 
 </body>
 </html>

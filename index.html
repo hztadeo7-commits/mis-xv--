@@ -1,3 +1,4 @@
+`
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,10 +9,6 @@
 <title>Mis XV Años — Edgar Tadeo Fernández Esparza</title>
 
 <style>
-
-/* ==============================
-   CONFIGURACIÓN GENERAL
-============================== */
 
 *{
     box-sizing:border-box;
@@ -27,14 +24,9 @@ body{
     min-height:100vh;
     background:#020912;
     color:#ffffff;
-    font-family:Georgia, "Times New Roman", serif;
+    font-family:Georgia,"Times New Roman",serif;
     overflow-x:hidden;
 }
-
-
-/* ==============================
-   FONDO
-============================== */
 
 body::before{
     content:"";
@@ -55,11 +47,6 @@ body::before{
     z-index:-2;
 }
 
-
-/* ==============================
-   BOTÓN DE MÚSICA
-============================== */
-
 .music-wrap{
     position:fixed;
     top:18px;
@@ -70,60 +57,46 @@ body::before{
 .music-btn{
     border:1px solid #23e7ff;
     border-radius:999px;
-
     padding:12px 20px;
-
     color:#ffffff;
-
     background:rgba(2,12,30,.92);
-
-    box-shadow:
-        0 0 18px rgba(34,231,255,.55);
-
+    box-shadow:0 0 18px rgba(34,231,255,.55);
     font-family:Georgia,serif;
     font-size:15px;
     font-weight:700;
-
     cursor:pointer;
-
-    transition:
-        .25s ease;
+    transition:.25s ease;
 }
 
 .music-btn:hover{
     background:rgba(0,132,255,.28);
-
-    box-shadow:
-        0 0 28px rgba(34,231,255,.85);
-
+    box-shadow:0 0 28px rgba(34,231,255,.85);
     transform:translateY(-2px);
 }
 
 .music-status{
     display:none;
-
     margin-top:8px;
-
     color:#bffaff;
-
     font-family:Arial,sans-serif;
     font-size:12px;
+    text-align:center;
 }
 
-
-/* ==============================
-   PORTADA
-============================== */
+.music-error{
+    color:#ffb3b3;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    margin-top:8px;
+    text-align:center;
+}
 
 .hero{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:35px 18px;
-
     background:
         linear-gradient(
             rgba(0,0,0,.48),
@@ -132,60 +105,36 @@ body::before{
         url("foto.jpg") center/cover no-repeat;
 }
 
-
-/* ==============================
-   TARJETA PRINCIPAL
-============================== */
-
 .hero-card{
     width:min(760px,95%);
-
     padding:48px 30px;
-
     text-align:center;
-
     background:
         linear-gradient(
             180deg,
             rgba(13,39,64,.78),
             rgba(2,10,22,.94)
         );
-
     border:1px solid rgba(34,231,255,.45);
-
     border-radius:38px;
-
     box-shadow:
         0 0 50px rgba(34,231,255,.15),
         inset 0 0 40px rgba(255,255,255,.03);
-
     backdrop-filter:blur(8px);
 }
 
-
-/* ==============================
-   TEXTOS PRINCIPALES
-============================== */
-
 .small-title{
     font-size:18px;
-
     letter-spacing:5px;
-
     text-transform:uppercase;
-
     color:#bffaff;
-
     margin-bottom:15px;
 }
 
 h1{
     font-size:64px;
-
     letter-spacing:4px;
-
     margin:8px 0;
-
     text-shadow:
         0 0 12px rgba(255,255,255,.65),
         0 0 30px rgba(34,231,255,.35);
@@ -193,186 +142,110 @@ h1{
 
 .name{
     font-size:29px;
-
     line-height:1.35;
-
     margin-top:12px;
-
     color:#ffffff;
 }
 
 .intro{
     max-width:620px;
-
     margin:28px auto 0;
-
     font-size:18px;
-
     line-height:1.75;
-
     color:#f3ffff;
 }
 
 .line{
     width:110px;
     height:2px;
-
     margin:28px auto;
-
     background:#23e7ff;
-
-    box-shadow:
-        0 0 15px rgba(34,231,255,.8);
+    box-shadow:0 0 15px rgba(34,231,255,.8);
 }
-
-
-/* ==============================
-   FOTO
-============================== */
 
 .photo{
     display:block;
-
     width:92%;
     max-width:560px;
-
     margin:30px auto;
-
     border-radius:38px;
-
     border:1px solid rgba(255,255,255,.35);
-
-    box-shadow:
-        0 0 35px rgba(0,132,255,.25);
-
+    box-shadow:0 0 35px rgba(0,132,255,.25);
     object-fit:cover;
 }
 
-
-/* ==============================
-   CUENTA REGRESIVA
-============================== */
-
 .section-title{
     font-size:25px;
-
     letter-spacing:2px;
-
     margin:35px 0 18px;
-
     color:#ffffff;
-
-    text-shadow:
-        0 0 12px rgba(34,231,255,.45);
+    text-shadow:0 0 12px rgba(34,231,255,.45);
 }
 
 .countdown{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:10px;
-
     margin:20px auto;
-
     max-width:650px;
 }
 
 .count-box{
     padding:18px 8px;
-
     background:rgba(5,18,35,.78);
-
     border:1px solid rgba(34,231,255,.35);
-
     border-radius:22px;
-
-    box-shadow:
-        0 0 18px rgba(34,231,255,.08);
+    box-shadow:0 0 18px rgba(34,231,255,.08);
 }
 
 .count-box strong{
     display:block;
-
     font-size:30px;
-
     color:#ffffff;
 }
 
 .count-box span{
     display:block;
-
     margin-top:5px;
-
     font-size:12px;
-
     letter-spacing:1px;
-
     color:#bffaff;
-
     text-transform:uppercase;
 }
 
-
-/* ==============================
-   INFORMACIÓN DEL EVENTO
-============================== */
-
 .event-info{
     display:grid;
-
     gap:15px;
-
     margin-top:28px;
 }
 
 .info-box{
     padding:17px;
-
     border-radius:20px;
-
     background:rgba(4,18,34,.72);
-
     border:1px solid rgba(255,255,255,.14);
 }
 
 .info-box .label{
     display:block;
-
     margin-bottom:5px;
-
     color:#6ff3ff;
-
     font-size:13px;
-
     font-weight:bold;
-
     letter-spacing:2px;
-
     text-transform:uppercase;
 }
 
 .info-box .value{
     font-size:19px;
-
     line-height:1.5;
 }
 
-
-/* ==============================
-   CÓDIGO DE VESTIMENTA
-============================== */
-
 .dress-code{
     margin-top:20px;
-
     padding:20px;
-
     border:1px solid rgba(34,231,255,.3);
-
     border-radius:22px;
-
     background:
         linear-gradient(
             135deg,
@@ -383,88 +256,55 @@ h1{
 
 .dress-code h3{
     margin-bottom:8px;
-
     color:#6ff3ff;
-
     letter-spacing:2px;
 }
 
 .dress-code p{
     font-size:18px;
-
     line-height:1.6;
 }
 
-
-/* ==============================
-   FRASE / MENSAJE
-============================== */
-
 .quote-section{
     margin-top:45px;
-
     padding:30px 22px;
-
     border-radius:28px;
-
     background:rgba(2,14,28,.62);
-
     border:1px solid rgba(34,231,255,.22);
 }
 
 .quote-section h2{
     margin-bottom:25px;
-
     font-size:27px;
-
     color:#ffffff;
-
-    text-shadow:
-        0 0 15px rgba(34,231,255,.4);
+    text-shadow:0 0 15px rgba(34,231,255,.4);
 }
 
 .quote{
     max-width:650px;
-
     margin:auto;
-
     font-size:17px;
-
     line-height:1.9;
-
     color:#f5ffff;
 }
 
-
-/* ==============================
-   FAMILIA
-============================== */
-
 .family{
     margin-top:45px;
-
     padding-top:25px;
-
     border-top:1px solid rgba(255,255,255,.18);
 }
 
 .family-title{
     margin-bottom:12px;
-
     font-size:14px;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
-
     color:#6ff3ff;
 }
 
 .family-name{
     font-size:24px;
-
     line-height:1.45;
-
     margin-bottom:28px;
 }
 
@@ -472,70 +312,37 @@ h1{
     color:#ffffff;
 }
 
-
-/* ==============================
-   CONFIRMAR ASISTENCIA
-============================== */
-
 .confirm-section{
     margin-top:35px;
-
     padding-top:28px;
-
     border-top:1px solid rgba(255,255,255,.18);
 }
 
 .confirm-button{
     display:inline-block;
-
     padding:15px 28px;
-
     border-radius:999px;
-
     background:#ffffff;
-
     color:#07101b;
-
     text-decoration:none;
-
     font-family:Arial,sans-serif;
-
     font-size:15px;
-
     font-weight:700;
-
-    box-shadow:
-        0 0 25px rgba(255,255,255,.25);
-
+    box-shadow:0 0 25px rgba(255,255,255,.25);
     transition:.25s ease;
 }
 
 .confirm-button:hover{
     transform:translateY(-2px);
-
-    box-shadow:
-        0 0 35px rgba(34,231,255,.55);
+    box-shadow:0 0 35px rgba(34,231,255,.55);
 }
-
-
-/* ==============================
-   PIE
-============================== */
 
 .footer{
     margin-top:40px;
-
     font-size:13px;
-
     letter-spacing:3px;
-
     color:#9cecf5;
 }
-
-
-/* ==============================
-   RESPONSIVE
-============================== */
 
 @media(max-width:600px){
 
@@ -570,8 +377,7 @@ h1{
     }
 
     .countdown{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .count-box strong{
@@ -588,31 +394,10 @@ h1{
 
 }
 
-
-/* ==============================
-   MENSAJE DE ERROR
-============================== */
-
-.music-error{
-    color:#ffb3b3;
-
-    font-family:Arial,sans-serif;
-
-    font-size:12px;
-
-    margin-top:8px;
-}
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- ==============================
-     MÚSICA
-============================== -->
 
 <div class="music-wrap">
 
@@ -633,9 +418,13 @@ h1{
 </div>
 
 
-<!-- ==============================
-     AUDIO
-============================== -->
+<!--
+    IMPORTANTE:
+    TU ARCHIVO REAL SE LLAMA:
+    musica.mp3.mp3
+
+    NO LO CAMBIES POR AHORA.
+-->
 
 <audio
     id="musicAudio"
@@ -643,7 +432,7 @@ h1{
     preload="auto">
 
     <source
-        src="./musica.mp3"
+        src="./musica.mp3.mp3"
         type="audio/mpeg">
 
     Tu navegador no puede reproducir este audio.
@@ -651,33 +440,23 @@ h1{
 </audio>
 
 
-
-<!-- ==============================
-     PORTADA
-============================== -->
-
 <main class="hero">
 
 <div class="hero-card">
-
 
 <div class="small-title">
     Estás invitado
 </div>
 
-
 <h1>
     MIS XV
 </h1>
-
 
 <div class="name">
     Edgar Tadeo Fernández Esparza
 </div>
 
-
 <div class="line"></div>
-
 
 <p class="intro">
 
@@ -687,28 +466,16 @@ h1{
 
 </p>
 
-
-<!-- FOTO -->
-
 <img
     class="photo"
     src="foto.jpg"
-    alt="Edgar Tadeo"
-    onerror="this.style.display='none';">
-
-
-
-<!-- ==============================
-     CUENTA REGRESIVA
-============================== -->
+    alt="Edgar Tadeo">
 
 <h2 class="section-title">
     Cuenta regresiva
 </h2>
 
-
 <div class="countdown">
-
 
     <div class="count-box">
 
@@ -722,7 +489,6 @@ h1{
 
     </div>
 
-
     <div class="count-box">
 
         <strong id="days">
@@ -734,7 +500,6 @@ h1{
         </span>
 
     </div>
-
 
     <div class="count-box">
 
@@ -748,7 +513,6 @@ h1{
 
     </div>
 
-
     <div class="count-box">
 
         <strong id="seconds">
@@ -761,17 +525,9 @@ h1{
 
     </div>
 
-
 </div>
 
-
-
-<!-- ==============================
-     INFORMACIÓN
-============================== -->
-
 <div class="event-info">
-
 
     <div class="info-box">
 
@@ -785,7 +541,6 @@ h1{
 
     </div>
 
-
     <div class="info-box">
 
         <span class="label">
@@ -798,7 +553,6 @@ h1{
 
     </div>
 
-
     <div class="info-box">
 
         <span class="label">
@@ -806,11 +560,10 @@ h1{
         </span>
 
         <span class="value">
-            San Nicolas Terraza &amp; Jardín
+            San Nicolas Terraza & Jardín
         </span>
 
     </div>
-
 
     <div class="info-box">
 
@@ -824,14 +577,7 @@ h1{
 
     </div>
 
-
 </div>
-
-
-
-<!-- ==============================
-     CÓDIGO DE VESTIMENTA
-============================== -->
 
 <div class="dress-code">
 
@@ -840,23 +586,17 @@ h1{
     </h3>
 
     <p>
-        Black &amp; Crown
+        Black & Crown
     </p>
 
 </div>
 
-
-
-<!-- ==============================
-     FRASE
-============================== -->
 
 <section class="quote-section">
 
     <h2>
         Una frase para recordar
     </h2>
-
 
     <p class="quote">
 
@@ -898,26 +638,19 @@ h1{
 </section>
 
 
-
-<!-- ==============================
-     FAMILIA
-     ESTO QUEDA AL FINAL
-============================== -->
-
 <section class="family">
-
 
     <div class="family-title">
         Con el amor de mi madre
     </div>
 
     <div class="family-name">
+
         <strong>
             Karla Karina Fernández Esparza
         </strong>
+
     </div>
-
-
 
     <div class="family-title">
         Con el cariño de mis padrinos
@@ -931,7 +664,7 @@ h1{
 
         <br>
 
-        &amp;
+        &
 
         <br>
 
@@ -941,15 +674,8 @@ h1{
 
     </div>
 
-
 </section>
 
-
-
-<!-- ==============================
-     CONFIRMAR ASISTENCIA
-     ÚLTIMO BOTÓN
-============================== -->
 
 <section
     class="confirm-section"
@@ -957,7 +683,7 @@ h1{
 
     <a
         class="confirm-button"
-        href="mailto:">
+        href="#confirmar">
 
         💌 CONFIRMAR ASISTENCIA
 
@@ -966,26 +692,18 @@ h1{
 </section>
 
 
-
 <div class="footer">
 
     UNA NOCHE · UN ESTILO · UN NUEVO CAPÍTULO
 
 </div>
 
-
 </div>
 
 </main>
 
 
-
-<!-- ==============================
-     JAVASCRIPT
-============================== -->
-
 <script>
-
 
 /* ==============================
    MÚSICA
@@ -1007,27 +725,23 @@ musicBtn.addEventListener(
 
         try{
 
-            if(
-                musicAudio.paused
-            ){
+            if(musicAudio.paused){
 
                 await musicAudio.play();
 
                 musicBtn.textContent =
                     "⏸ PAUSAR MÚSICA";
 
-                musicStatus.style.display =
-                    "block";
-
                 musicStatus.className =
                     "music-status";
+
+                musicStatus.style.display =
+                    "block";
 
                 musicStatus.textContent =
                     "♪ Música reproduciéndose";
 
-            }
-
-            else{
+            }else{
 
                 musicAudio.pause();
 
@@ -1042,23 +756,21 @@ musicBtn.addEventListener(
 
             }
 
-        }
-
-        catch(error){
+        }catch(error){
 
             console.error(
-                "Error al reproducir la música:",
+                "Error al reproducir:",
                 error
             );
-
-            musicStatus.style.display =
-                "block";
 
             musicStatus.className =
                 "music-error";
 
+            musicStatus.style.display =
+                "block";
+
             musicStatus.textContent =
-                "No se pudo cargar musica.mp3";
+                "No se pudo cargar musica.mp3.mp3";
 
         }
 
@@ -1070,14 +782,14 @@ musicAudio.addEventListener(
     "error",
     function(){
 
-        musicStatus.style.display =
-            "block";
-
         musicStatus.className =
             "music-error";
 
+        musicStatus.style.display =
+            "block";
+
         musicStatus.textContent =
-            "No se encontró musica.mp3";
+            "No se encontró musica.mp3.mp3";
 
     }
 );
@@ -1094,16 +806,9 @@ musicAudio.addEventListener(
 );
 
 
-
 /* ==============================
    CUENTA REGRESIVA
 ============================== */
-
-/*
-   FECHA DEL EVENTO:
-   17 DE JULIO DE 2027
-   7:00 PM
-*/
 
 const eventDate =
     new Date(
@@ -1116,9 +821,8 @@ function updateCountdown(){
     const now =
         new Date().getTime();
 
-    let distance =
+    const distance =
         eventDate - now;
-
 
     if(distance <= 0){
 
@@ -1142,28 +846,23 @@ function updateCountdown(){
 
     }
 
-
     const secondsTotal =
         Math.floor(
             distance / 1000
         );
-
 
     const daysTotal =
         Math.floor(
             secondsTotal / 86400
         );
 
-
     const months =
         Math.floor(
             daysTotal / 30
         );
 
-
     const days =
         daysTotal % 30;
-
 
     const hours =
         Math.floor(
@@ -1172,34 +871,28 @@ function updateCountdown(){
             ) / 3600
         );
 
-
     const seconds =
         secondsTotal % 60;
-
 
     document.getElementById(
         "months"
     ).textContent =
         months;
 
-
     document.getElementById(
         "days"
     ).textContent =
         days;
-
 
     document.getElementById(
         "hours"
     ).textContent =
         hours;
 
-
     document.getElementById(
         "seconds"
     ).textContent =
         seconds;
-
 }
 
 
@@ -1210,10 +903,8 @@ setInterval(
     1000
 );
 
-
 </script>
 
-
 </body>
-
 </html>
+`

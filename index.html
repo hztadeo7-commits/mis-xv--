@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis XV Años ✨</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mis XV — Edgar Tadeo Fernández Esparza</title>
 
 <style>
 *{
@@ -16,104 +17,255 @@ html{
 
 body{
   margin:0;
-  font-family:Georgia,serif;
-  background:#080812;
-  color:white;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
   text-align:center;
+  background:
+    radial-gradient(circle at 50% 5%,#36d9ff 0,#0878c8 25%,#063a8d 55%,#031a48 100%);
+  overflow-x:hidden;
 }
 
-.music{
+body:before{
+  content:"";
   position:fixed;
-  top:18px;
-  right:18px;
-  z-index:1000;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(0,238,255,.22),transparent 25%),
+    radial-gradient(circle at 85% 65%,rgba(0,180,255,.18),transparent 28%);
+}
+
+.page{
+  position:relative;
+  z-index:1;
+  width:min(760px,100%);
+  margin:auto;
+  padding:22px 18px 45px;
+}
+
+/* MÚSICA */
+.music{
+  position:sticky;
+  top:12px;
+  z-index:20;
+  display:flex;
+  justify-content:center;
+  margin-bottom:16px;
 }
 
 .music button{
-  border:none;
-  border-radius:50px;
-  padding:13px 20px;
-  background:rgba(255,255,255,.9);
-  color:#111;
-  font-size:16px;
+  border:1px solid #5ff5ff;
+  border-radius:999px;
+  padding:13px 24px;
+  color:#fff;
+  background:rgba(3,55,125,.88);
+  box-shadow:0 0 20px rgba(0,229,255,.45);
+  font-weight:700;
+  letter-spacing:.5px;
   cursor:pointer;
-  box-shadow:0 0 20px rgba(255,255,255,.4);
 }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:30px 20px;
-  background:
-    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.7)),
-    url("foto.jpg") center/cover no-repeat;
-}
-
+/* TARJETA */
 .card{
-  width:min(600px,95%);
-  padding:45px 25px;
+  border:1px solid rgba(78,239,255,.9);
   border-radius:30px;
-  background:rgba(10,10,20,.62);
-  backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.3);
-  box-shadow:0 0 45px rgba(255,255,255,.18);
+  padding:40px 28px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13,151,220,.55),
+      rgba(4,75,157,.48)
+    );
+  box-shadow:
+    0 0 45px rgba(0,220,255,.25),
+    inset 0 0 35px rgba(255,255,255,.05);
+  backdrop-filter:blur(5px);
 }
 
-.small{
-  font-size:18px;
-  letter-spacing:4px;
-  text-transform:uppercase;
+/* ENCABEZADO */
+.sparkles{
+  font-size:46px;
+  letter-spacing:18px;
+  text-shadow:0 0 18px #fff;
+}
+
+.kicker{
+  margin:10px 0 18px;
+  font-size:19px;
+  letter-spacing:8px;
+  font-weight:700;
 }
 
 h1{
-  font-size:55px;
-  margin:20px 0 10px;
-  text-shadow:0 0 20px rgba(255,255,255,.5);
+  margin:0;
+  font-size:70px;
+  letter-spacing:10px;
+  font-weight:500;
+  text-shadow:0 0 18px rgba(255,255,255,.45);
 }
 
 .name{
-  font-size:30px;
-  margin:15px 0 25px;
+  font-size:31px;
+  font-weight:700;
+  margin:20px 0;
 }
 
 .line{
-  width:100px;
+  width:110px;
   height:2px;
-  background:white;
   margin:25px auto;
+  background:#64f8ff;
+  box-shadow:0 0 12px #64f8ff;
 }
 
 .message{
+  font-size:19px;
+  line-height:1.75;
+  font-weight:600;
+}
+
+/* FOTO */
+.photo{
+  width:min(520px,100%);
+  margin:28px auto;
+  border-radius:25px;
+  overflow:hidden;
+  border:1px solid #48edff;
+  box-shadow:0 0 30px rgba(0,229,255,.35);
+}
+
+.photo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* SECCIONES */
+.section-title{
+  margin:35px 0 20px;
+  font-size:24px;
+  letter-spacing:7px;
+}
+
+/* CUENTA REGRESIVA */
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:15px 0 30px;
+}
+
+.time{
+  border:1px solid rgba(85,237,255,.85);
+  border-radius:18px;
+  padding:17px 8px;
+  background:rgba(2,87,174,.5);
+}
+
+.time strong{
+  display:block;
+  font-size:30px;
+}
+
+.time span{
+  font-size:11px;
+  letter-spacing:1px;
+  font-weight:700;
+}
+
+/* INFORMACIÓN */
+.info{
+  display:grid;
+  gap:12px;
+  text-align:left;
+}
+
+.info div{
+  padding:16px 18px;
+  border-radius:17px;
+  background:rgba(205,221,255,.55);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.18);
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
+}
+
+.info b{
+  font-size:18px;
+}
+
+.details{
   font-size:18px;
   line-height:1.7;
+  margin-top:16px;
+  font-weight:700;
 }
 
-.info{
-  margin-top:35px;
-  font-size:18px;
-  line-height:1.8;
+/* FAMILIA */
+.family{
+  margin-top:40px;
 }
 
-.button{
+.family h2{
+  font-size:24px;
+  letter-spacing:5px;
+}
+
+.family .big{
+  font-size:25px;
+  font-weight:700;
+  line-height:1.5;
+}
+
+/* BOTÓN */
+.rsvp{
   display:inline-block;
-  margin-top:30px;
-  padding:14px 28px;
-  border-radius:30px;
-  color:#111;
-  background:white;
+  margin-top:28px;
+  padding:14px 30px;
+  border-radius:999px;
+  border:2px solid #57efff;
+  color:#fff;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:700;
+  background:rgba(0,111,210,.55);
+  box-shadow:0 0 18px rgba(0,229,255,.35);
 }
 
-@media(max-width:500px){
+/* FINAL */
+.footer{
+  margin-top:38px;
+  font-size:14px;
+  letter-spacing:5px;
+  font-weight:700;
+}
+
+/* CELULAR */
+@media(max-width:560px){
+
+  .card{
+    padding:30px 17px;
+  }
+
   h1{
-    font-size:42px;
+    font-size:49px;
+    letter-spacing:6px;
   }
 
   .name{
     font-size:25px;
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .kicker{
+    font-size:15px;
+    letter-spacing:5px;
+  }
+
+  .message{
+    font-size:17px;
   }
 }
 </style>
@@ -121,72 +273,241 @@ h1{
 
 <body>
 
-<audio id="musicAudio" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
+<div class="page">
 
-<div class="music">
-  <button onclick="toggleMusic()" id="musicBtn">▶️ Música</button>
-</div>
+  <!-- BOTÓN DE MÚSICA -->
+  <div class="music">
+    <button id="musicBtn" onclick="toggleMusic()">
+      ▶️ REPRODUCIR MÚSICA
+    </button>
+  </div>
 
-<section class="hero">
+  <main class="card">
 
-  <div class="card">
+    <!-- ENCABEZADO -->
+    <div class="sparkles">♦ ✦ ♦</div>
 
-    <div class="small">Mis XV Años</div>
+    <div class="kicker">
+      ESTÁS INVITADO
+    </div>
 
-    <h1>✨ XV ✨</h1>
-
-    <div class="line"></div>
+    <h1>
+      MIS XV
+    </h1>
 
     <div class="name">
       Edgar Tadeo Fernández Esparza
     </div>
 
-    <p class="message">
-      Hay momentos en la vida que merecen ser celebrados
-      de una manera muy especial.
-      <br><br>
-      Me encantaría compartir contigo
-      este día tan importante para mí.
-    </p>
-
     <div class="line"></div>
 
-    <div class="info">
-      📅 <b>Fecha</b><br>
-      Próximamente
-      <br><br>
+    <p class="message">
+      Te invito a compartir conmigo<br>
+      una noche especial<br>
+      llena de música, luces y buenos momentos.
+    </p>
 
-      📍 <b>Lugar</b><br>
-      Próximamente
-      <br><br>
-
-      🕐 <b>Hora</b><br>
-      Próximamente
+    <!-- FOTO -->
+    <div class="photo">
+      <img src="foto.jpg" alt="Edgar Tadeo">
     </div>
 
-    <a href="#confirmar" class="button">
-      💌 Confirmar asistencia
+    <!-- CUENTA REGRESIVA -->
+    <div class="section-title">
+      CUENTA REGRESIVA
+    </div>
+
+    <div class="countdown">
+
+      <div class="time">
+        <strong id="meses">--</strong>
+        <span>MESES</span>
+      </div>
+
+      <div class="time">
+        <strong id="dias">--</strong>
+        <span>DÍAS</span>
+      </div>
+
+      <div class="time">
+        <strong id="horas">--</strong>
+        <span>HORAS</span>
+      </div>
+
+      <div class="time">
+        <strong id="segundos">--</strong>
+        <span>SEGUNDOS</span>
+      </div>
+
+    </div>
+
+    <!-- DATOS -->
+    <div class="section-title">
+      BLACK &amp; CROWN
+    </div>
+
+    <div class="info">
+
+      <div>
+        📅 <b>FECHA</b><br>
+        17 de julio de 2027
+      </div>
+
+      <div>
+        ◉ <b>HORA</b><br>
+        7:00 p. m.
+      </div>
+
+      <div>
+        📍 <b>LUGAR</b><br>
+        San Nicolas Terraza &amp; Jardín
+      </div>
+
+    </div>
+
+    <div class="details">
+      30–50 invitados · DJ · banda · escena · luces LED
+    </div>
+
+    <!-- MAMÁ -->
+    <div class="family">
+
+      <h2>
+        CON EL AMOR DE MI MADRE
+      </h2>
+
+      <div class="big">
+        KARLA KARINA<br>
+        FERNÁNDEZ ESPARZA
+      </div>
+
+      <!-- PADRINOS -->
+      <h2>
+        CON EL CARIÑO DE<br>
+        MIS PADRINOS
+      </h2>
+
+      <div class="big">
+        IVONNE<br>
+        &amp;<br>
+        JESÚS
+      </div>
+
+    </div>
+
+    <!-- CONFIRMACIÓN -->
+    <a
+      class="rsvp"
+      href="#confirmar"
+      onclick="confirmar(event)"
+    >
+      CONFIRMAR ASISTENCIA
     </a>
 
-  </div>
+    <div id="confirmar" class="footer">
+      UNA NOCHE · UN ESTILO · UN NUEVO CAPÍTULO
+    </div>
 
-</section>
+  </main>
+
+</div>
+
+<!-- MÚSICA -->
+<audio id="audio" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-const audio = document.getElementById("musicAudio");
-const button = document.getElementById("musicBtn");
+
+const fecha = new Date("2027-07-17T19:00:00");
+
+const audio = document.getElementById("audio");
+
+const btn = document.getElementById("musicBtn");
+
+
+/* REPRODUCIR / PAUSAR */
 
 function toggleMusic(){
+
   if(audio.paused){
-    audio.play();
-    button.innerHTML = "⏸️ Pausar";
+
+    audio.play().then(()=>{
+
+      btn.textContent="⏸️ PAUSAR MÚSICA";
+
+    }).catch(()=>{
+
+      btn.textContent="▶️ REPRODUCIR MÚSICA";
+
+    });
+
   }else{
+
     audio.pause();
-    button.innerHTML = "▶️ Música";
+
+    btn.textContent="▶️ REPRODUCIR MÚSICA";
+
   }
+
 }
+
+
+/* CUENTA REGRESIVA */
+
+function actualizar(){
+
+  const ahora = new Date();
+
+  let ms = fecha - ahora;
+
+  if(ms < 0){
+    ms = 0;
+  }
+
+  const total = Math.floor(ms / 1000);
+
+  const segundos = total % 60;
+
+  const horas = Math.floor(total / 3600) % 24;
+
+  const diasTotal = Math.floor(total / 86400);
+
+
+  document.getElementById("segundos").textContent =
+    String(segundos).padStart(2,"0");
+
+  document.getElementById("horas").textContent =
+    String(horas).padStart(2,"0");
+
+  document.getElementById("dias").textContent =
+    String(diasTotal).padStart(2,"0");
+
+
+  const meses = Math.floor(diasTotal / 30.4375);
+
+  document.getElementById("meses").textContent =
+    String(meses).padStart(2,"0");
+}
+
+
+actualizar();
+
+setInterval(actualizar,1000);
+
+
+/* CONFIRMAR */
+
+function confirmar(e){
+
+  e.preventDefault();
+
+  alert(
+    "¡Gracias! La confirmación de asistencia estará disponible aquí."
+  );
+
+}
+
 </script>
 
 </body>

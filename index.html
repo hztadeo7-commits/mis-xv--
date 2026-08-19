@@ -1,462 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MIS XV — Edgar Tadeo Fernández Esparza</title>
+  <title>Mis XV Años — Karla Karina Fernández Esparza</title>
 
-<style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    min-height:100vh;
-    background:
-        radial-gradient(circle at 50% 0%, #17233d 0%, #080b14 42%, #020307 100%);
-    color:#f1f5ff;
-    font-family:Georgia, "Times New Roman", serif;
-    overflow-x:hidden;
-}
-
-/* =========================
-   EFECTOS DE FONDO
-========================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(0,150,255,.08), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(120,0,255,.08), transparent 30%);
-    z-index:-2;
-}
-
-.stars{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-1;
-    overflow:hidden;
-}
-
-.star{
-    position:absolute;
-    width:3px;
-    height:3px;
-    background:#fff;
-    border-radius:50%;
-    box-shadow:0 0 10px #fff;
-    animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-    from{
-        opacity:.2;
-        transform:scale(.7);
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    to{
-        opacity:1;
-        transform:scale(1.3);
+
+    html {
+      scroll-behavior: smooth;
     }
-}
 
-/* =========================
-   CONTENEDOR
-========================= */
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #18213d 0%, #080b15 42%, #020308 100%);
+      color: #f5f7ff;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
 
-.page{
-    width:min(920px,92%);
-    margin:auto;
-    padding:28px 0 80px;
-}
+    /* =========================
+       FONDO
+    ========================= */
 
-/* =========================
-   BOTÓN DE MÚSICA
-========================= */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(34, 231, 255, 0.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(160, 70, 255, 0.08), transparent 30%);
+      z-index: -1;
+    }
 
-.music-wrap{
-    position:fixed;
-    top:18px;
-    right:18px;
-    z-index:100;
-}
+    .page {
+      width: min(920px, 92%);
+      margin: 0 auto;
+      padding: 25px 0 60px;
+    }
 
-.music-btn{
-    border:1px solid #23d9ff;
-    border-radius:999px;
-    padding:13px 20px;
-    color:#fff;
-    background:rgba(2,8,20,.94);
-    box-shadow:
-        0 0 18px rgba(34,231,255,.45),
-        inset 0 0 15px rgba(34,231,255,.08);
-    font:bold 14px Arial,sans-serif;
-    cursor:pointer;
-    transition:.25s ease;
-}
+    /* =========================
+       BOTÓN DE MÚSICA
+    ========================= */
 
-.music-btn:hover{
-    transform:translateY(-2px);
-    background:rgba(0,70,120,.6);
-    box-shadow:
-        0 0 30px rgba(34,231,255,.8);
-}
+    .music-wrap {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 1000;
+    }
 
-.music-status{
-    display:none;
-    margin-top:8px;
-    padding:8px 12px;
-    border-radius:10px;
-    background:rgba(0,0,0,.8);
-    border:1px solid rgba(34,231,255,.35);
-    font:12px Arial,sans-serif;
-    color:#dffaff;
-}
+    .music-btn {
+      border: 1px solid rgba(34, 231, 255, 0.7);
+      border-radius: 999px;
+      padding: 13px 19px;
+      color: #ffffff;
+      background: rgba(2, 8, 20, 0.94);
+      box-shadow:
+        0 0 18px rgba(34, 231, 255, 0.28),
+        inset 0 0 12px rgba(34, 231, 255, 0.06);
+      font: 700 14px Arial, sans-serif;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
 
-/* =========================
-   PORTADA
-========================= */
+    .music-btn:hover {
+      transform: scale(1.04);
+      background: rgba(10, 25, 50, 0.98);
+      box-shadow:
+        0 0 28px rgba(34, 231, 255, 0.55),
+        inset 0 0 15px rgba(34, 231, 255, 0.1);
+    }
 
-.hero{
-    min-height:92vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
+    .music-status {
+      display: none;
+      margin-top: 7px;
+      text-align: center;
+      color: #9ff7ff;
+      font: 12px Arial, sans-serif;
+    }
 
-.hero-card{
-    width:100%;
-    padding:55px 28px;
-    border-radius:34px;
-    background:
+    /* =========================
+       PORTADA
+    ========================= */
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      padding: 55px 28px;
+      border: 1px solid rgba(34, 231, 255, 0.35);
+      border-radius: 32px;
+      background:
         linear-gradient(
-            145deg,
-            rgba(20,30,55,.95),
-            rgba(4,7,16,.97)
+          145deg,
+          rgba(15, 23, 45, 0.96),
+          rgba(3, 7, 18, 0.98)
         );
-    border:1px solid rgba(34,231,255,.35);
-    box-shadow:
-        0 0 50px rgba(0,160,255,.12),
-        inset 0 0 35px rgba(0,140,255,.05);
-    position:relative;
-    overflow:hidden;
-}
+      box-shadow:
+        0 0 45px rgba(0, 0, 0, 0.75),
+        0 0 30px rgba(34, 231, 255, 0.08);
+    }
 
-.hero-card::before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:rgba(0,160,255,.07);
-    filter:blur(50px);
-    top:-140px;
-    left:50%;
-    transform:translateX(-50%);
-}
+    .small-text {
+      color: #9ff7ff;
+      font: 700 14px Arial, sans-serif;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
 
-.kicker{
-    color:#63eaff;
-    letter-spacing:7px;
-    font:700 13px Arial,sans-serif;
-    margin-bottom:25px;
-}
+    h1 {
+      font-size: clamp(44px, 9vw, 82px);
+      line-height: 0.95;
+      font-weight: 400;
+      color: #ffffff;
+      text-shadow:
+        0 0 15px rgba(255, 255, 255, 0.15),
+        0 0 35px rgba(34, 231, 255, 0.2);
+    }
 
-h1{
-    font-size:clamp(48px,9vw,86px);
-    letter-spacing:8px;
-    font-weight:400;
-    margin-bottom:15px;
-    text-shadow:
-        0 0 15px rgba(34,231,255,.35);
-}
+    .name {
+      margin-top: 22px;
+      color: #9ff7ff;
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.15;
+      font-weight: 400;
+    }
 
-.subtitle{
-    font-size:clamp(18px,3vw,25px);
-    color:#d7e4ff;
-    margin-bottom:30px;
-}
-
-.divider{
-    width:150px;
-    height:1px;
-    margin:25px auto;
-    background:linear-gradient(
+    .divider {
+      width: 120px;
+      height: 1px;
+      margin: 30px auto;
+      background: linear-gradient(
         90deg,
         transparent,
-        #39ddff,
+        #9ff7ff,
         transparent
-    );
-}
-
-.date{
-    font:700 16px Arial,sans-serif;
-    letter-spacing:3px;
-    color:#9deeff;
-}
-
-/* =========================
-   FOTO
-========================= */
-
-.photo-box{
-    margin-top:35px;
-}
-
-.photo{
-    display:block;
-    width:100%;
-    max-width:560px;
-    max-height:700px;
-    object-fit:cover;
-    margin:0 auto;
-    border-radius:28px;
-    border:2px solid rgba(34,231,255,.55);
-    box-shadow:
-        0 0 35px rgba(0,173,255,.22);
-}
-
-/* =========================
-   SECCIONES
-========================= */
-
-.section{
-    margin-top:35px;
-    padding:35px 25px;
-    border-radius:28px;
-    background:rgba(5,10,22,.82);
-    border:1px solid rgba(34,231,255,.22);
-    box-shadow:
-        inset 0 0 25px rgba(0,140,255,.045);
-}
-
-.section-title{
-    text-align:center;
-    font-size:25px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    color:#eafcff;
-    margin-bottom:25px;
-}
-
-.text{
-    max-width:720px;
-    margin:auto;
-    text-align:center;
-    font-size:18px;
-    line-height:1.8;
-    color:#cbd8ef;
-}
-
-/* =========================
-   CUENTA REGRESIVA
-========================= */
-
-.countdown{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
-
-.count-box{
-    padding:22px 8px;
-    text-align:center;
-    border-radius:18px;
-    background:rgba(12,21,40,.9);
-    border:1px solid rgba(34,231,255,.3);
-}
-
-.count-box strong{
-    display:block;
-    font-size:34px;
-    color:#64eaff;
-    text-shadow:0 0 12px rgba(34,231,255,.4);
-}
-
-.count-box span{
-    display:block;
-    margin-top:8px;
-    font:12px Arial,sans-serif;
-    letter-spacing:2px;
-    color:#9aaccb;
-    text-transform:uppercase;
-}
-
-/* =========================
-   DETALLES
-========================= */
-
-.details{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.detail{
-    padding:22px;
-    border-radius:20px;
-    background:rgba(11,18,34,.85);
-    border:1px solid rgba(34,231,255,.18);
-    text-align:center;
-}
-
-.detail-title{
-    color:#62e8ff;
-    font:bold 13px Arial,sans-serif;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    margin-bottom:10px;
-}
-
-.detail-text{
-    color:#e5edff;
-    font-size:18px;
-}
-
-/* =========================
-   FINAL
-========================= */
-
-.final{
-    text-align:center;
-    padding:55px 20px 20px;
-}
-
-.final h2{
-    font-size:35px;
-    font-weight:400;
-    letter-spacing:4px;
-}
-
-.final p{
-    margin-top:15px;
-    color:#9daecc;
-    font-size:16px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:650px){
-
-    .page{
-        width:94%;
-        padding-top:90px;
+      );
+      box-shadow: 0 0 12px #22e7ff;
     }
 
-    .music-wrap{
-        top:12px;
-        right:12px;
+    .hero-message {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #d8e0f2;
+      font-size: 18px;
+      line-height: 1.8;
     }
 
-    .music-btn{
-        padding:11px 15px;
-        font-size:12px;
+    /* =========================
+       SECCIONES
+    ========================= */
+
+    .section {
+      margin-top: 35px;
+      padding: 38px 25px;
+      border: 1px solid rgba(34, 231, 255, 0.2);
+      border-radius: 28px;
+      background: rgba(4, 10, 24, 0.82);
+      box-shadow:
+        inset 0 0 25px rgba(0, 150, 255, 0.04),
+        0 20px 50px rgba(0, 0, 0, 0.3);
+      text-align: center;
     }
 
-    .hero{
-        min-height:auto;
-        padding-top:20px;
+    .section-title {
+      margin-bottom: 25px;
+      color: #ffffff;
+      font-size: 26px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
 
-    .hero-card{
-        padding:45px 18px;
+    /* =========================
+       FRASE MOTIVADORA
+    ========================= */
+
+    .quote {
+      padding: 25px 10px;
+      color: #e8faff;
+      font-size: clamp(20px, 4vw, 30px);
+      line-height: 1.55;
+      font-style: italic;
+      text-shadow: 0 0 18px rgba(34, 231, 255, 0.15);
     }
 
-    h1{
-        font-size:45px;
-        letter-spacing:5px;
+    /* =========================
+       FOTO
+    ========================= */
+
+    .photo {
+      width: 100%;
+      max-width: 560px;
+      margin: 20px auto 0;
+      display: block;
+      border-radius: 28px;
+      border: 2px solid rgba(34, 231, 255, 0.55);
+      box-shadow:
+        0 0 35px rgba(0, 173, 255, 0.18),
+        0 20px 45px rgba(0, 0, 0, 0.6);
     }
 
-    .subtitle{
-        font-size:18px;
+    /* =========================
+       MENSAJES
+    ========================= */
+
+    .message {
+      color: #dbe4f6;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-top: 15px;
     }
 
-    .section{
-        padding:28px 18px;
+    .highlight {
+      color: #9ff7ff;
+      font-weight: bold;
     }
 
-    .countdown{
-        grid-template-columns:repeat(2,1fr);
+    /* =========================
+       FAMILIA
+    ========================= */
+
+    .family-box {
+      margin-top: 25px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(13, 20, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .details{
-        grid-template-columns:1fr;
+    .family-box p {
+      margin: 12px 0;
+      color: #e5e9f5;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    .text{
-        font-size:16px;
+    /* =========================
+       CONFIRMAR
+    ========================= */
+
+    .confirm-section {
+      padding-bottom: 50px;
     }
 
-}
+    .confirm-text {
+      color: #cfd8ea;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
 
-</style>
+    .confirm-btn {
+      display: inline-block;
+      border: 1px solid #9ff7ff;
+      border-radius: 999px;
+      padding: 15px 30px;
+      color: #ffffff;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(10, 100, 140, 0.55),
+          rgba(60, 20, 100, 0.55)
+        );
+      box-shadow:
+        0 0 25px rgba(34, 231, 255, 0.2);
+      font: 700 15px Arial, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .confirm-btn:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 0 35px rgba(34, 231, 255, 0.45);
+    }
+
+    /* =========================
+       PIE
+    ========================= */
+
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      color: #74809a;
+      font: 13px Arial, sans-serif;
+    }
+
+    /* =========================
+       MÓVIL
+    ========================= */
+
+    @media (max-width: 600px) {
+      .page {
+        width: 94%;
+      }
+
+      .music-wrap {
+        top: 10px;
+        right: 10px;
+      }
+
+      .music-btn {
+        padding: 11px 14px;
+        font-size: 12px;
+      }
+
+      .hero-card {
+        padding: 45px 18px;
+      }
+
+      .section {
+        padding: 30px 18px;
+      }
+
+      .hero-message,
+      .message,
+      .family-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="stars" aria-hidden="true">
-    <span class="star" style="top:8%;left:12%;"></span>
-    <span class="star" style="top:16%;left:75%;"></span>
-    <span class="star" style="top:27%;left:35%;"></span>
-    <span class="star" style="top:42%;left:88%;"></span>
-    <span class="star" style="top:55%;left:18%;"></span>
-    <span class="star" style="top:68%;left:72%;"></span>
-    <span class="star" style="top:81%;left:42%;"></span>
-    <span class="star" style="top:91%;left:90%;"></span>
-</div>
+  <!-- =========================
+       BOTÓN DE MÚSICA
+  ========================= -->
 
-<!-- =========================
-     BOTÓN DE MÚSICA
-========================= -->
-
-<div class="music-wrap">
+  <div class="music-wrap">
 
     <button
-        class="music-btn"
-        id="musicBtn"
-        type="button"
+      class="music-btn"
+      id="musicBtn"
+      type="button"
+      onclick="toggleMusic()"
     >
-        ▶ REPRODUCIR MÚSICA
+      ▶ REPRODUCIR MÚSICA
     </button>
 
     <div
-        class="music-status"
-        id="musicStatus"
-    ></div>
+      class="music-status"
+      id="musicStatus"
+    >
+      Música reproduciéndose ♪
+    </div>
 
-</div>
+  </div>
 
-<!-- =========================
-     AUDIO
-========================= -->
 
-<audio
+  <!-- =========================
+       AUDIO
+  ========================= -->
+
+  <audio
     id="musicAudio"
     loop
-    preload="metadata"
->
+    preload="auto"
+  >
     <source
-        src="musica.mp3"
-        type="audio/mpeg"
+      src="musica.mp3"
+      type="audio/mpeg"
     >
-    Tu navegador no puede reproducir audio.
-</audio>
 
-<main class="page">
+    Tu navegador no puede reproducir audio.
+  </audio>
+
+
+  <main class="page">
 
     <!-- =========================
          PORTADA
@@ -464,371 +392,210 @@ h1{
 
     <section class="hero">
 
-        <div class="hero-card">
+      <div class="hero-card">
 
-            <div class="kicker">
-                UNA NOCHE ESPECIAL
-            </div>
-
-            <h1>MIS XV</h1>
-
-            <div class="divider"></div>
-
-            <p class="subtitle">
-                Edgar Tadeo Fernández Esparza
-            </p>
-
-            <p class="date">
-                LLENA DE MÚSICA, LUCES Y BUENOS MOMENTOS
-            </p>
-
-            <div class="photo-box">
-
-                <img
-                    class="photo"
-                    src="foto.jpg"
-                    alt="Edgar Tadeo"
-                    onerror="this.style.display='none'; document.getElementById('photoError').style.display='block';"
-                >
-
-                <p
-                    id="photoError"
-                    style="display:none;color:#ff8c8c;font-family:Arial,sans-serif;margin-top:15px;"
-                >
-                    ⚠️ No se encontró foto.jpg
-                </p>
-
-            </div>
-
+        <div class="small-text">
+          Mis XV Años
         </div>
 
-    </section>
+        <h1>
+          Una noche
+          <br>
+          para recordar
+        </h1>
 
-    <!-- =========================
-         MENSAJE
-    ========================= -->
+        <div class="name">
+          Karla Karina
+          <br>
+          Fernández Esparza
+        </div>
 
-    <section class="section">
+        <div class="divider"></div>
 
-        <h2 class="section-title">
-            Una noche para recordar
-        </h2>
-
-        <p class="text">
-            Hay momentos que merecen quedarse para siempre.
-            Esta celebración está llena de música, luces,
-            alegría y personas especiales que hacen que
-            esta noche sea inolvidable.
+        <p class="hero-message">
+          Hay momentos que se quedan para siempre
+          en el corazón. Hoy quiero compartir contigo
+          uno de los más importantes de mi vida.
         </p>
 
+      </div>
+
     </section>
 
+
     <!-- =========================
-         CUENTA REGRESIVA
+         FRASE
     ========================= -->
 
     <section class="section">
 
-        <h2 class="section-title">
-            Cuenta regresiva
-        </h2>
+      <h2 class="section-title">
+        Una frase para recordar
+      </h2>
 
-        <div class="countdown">
-
-            <div class="count-box">
-                <strong id="days">00</strong>
-                <span>Días</span>
-            </div>
-
-            <div class="count-box">
-                <strong id="hours">00</strong>
-                <span>Horas</span>
-            </div>
-
-            <div class="count-box">
-                <strong id="minutes">00</strong>
-                <span>Minutos</span>
-            </div>
-
-            <div class="count-box">
-                <strong id="seconds">00</strong>
-                <span>Segundos</span>
-            </div>
-
-        </div>
+      <p class="quote">
+        “Nunca dejes de soñar, porque cada sueño
+        puede convertirse en el comienzo de una
+        historia maravillosa.”
+      </p>
 
     </section>
 
+
     <!-- =========================
-         INFORMACIÓN
+         FOTO
     ========================= -->
 
     <section class="section">
 
-        <h2 class="section-title">
-            Detalles
-        </h2>
+      <h2 class="section-title">
+        Un momento especial
+      </h2>
 
-        <div class="details">
+      <img
+        class="photo"
+        src="foto.jpg"
+        alt="Karla Karina Fernández Esparza"
+        onerror="this.style.display='none';"
+      >
 
-            <div class="detail">
-
-                <div class="detail-title">
-                    Celebración
-                </div>
-
-                <div class="detail-text">
-                    Mis XV Años
-                </div>
-
-            </div>
-
-            <div class="detail">
-
-                <div class="detail-title">
-                    Música
-                </div>
-
-                <div class="detail-text">
-                    Una noche inolvidable
-                </div>
-
-            </div>
-
-            <div class="detail">
-
-                <div class="detail-title">
-                    Invitados
-                </div>
-
-                <div class="detail-text">
-                    Familia y amigos
-                </div>
-
-            </div>
-
-            <div class="detail">
-
-                <div class="detail-title">
-                    Momento
-                </div>
-
-                <div class="detail-text">
-                    Para recordar siempre
-                </div>
-
-            </div>
-
-        </div>
+      <p class="message">
+        Con mucha ilusión quiero compartir
+        esta noche tan especial contigo.
+      </p>
 
     </section>
 
+
     <!-- =========================
-         FINAL
+         FAMILIA
     ========================= -->
 
-    <section class="final">
+    <section class="section">
 
-        <h2>
-            Gracias por compartir esta noche
-        </h2>
+      <h2 class="section-title">
+        Con cariño
+      </h2>
+
+      <div class="family-box">
 
         <p>
-            ✦ Música · Luces · Recuerdos · Alegría ✦
+          Con el amor de mi madre,
+          <br>
+          <span class="highlight">
+            Carla Karina Fernández Esparza
+          </span>
         </p>
+
+        <p>
+          Con el cariño de mis padrinos,
+          <br>
+          <span class="highlight">
+            Ivonne y Jesús
+          </span>
+        </p>
+
+      </div>
 
     </section>
 
-</main>
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+    <!-- =========================
+         CONFIRMAR ASISTENCIA
+    ========================= -->
 
-<script>
+    <section class="section confirm-section">
 
-document.addEventListener("DOMContentLoaded", function(){
+      <h2 class="section-title">
+        Confirmar asistencia
+      </h2>
 
-    /* =========================
-       MÚSICA
-    ========================= */
+      <p class="confirm-text">
+        Será un honor contar con tu presencia
+        en este día tan especial.
+      </p>
 
-    const musicBtn =
-        document.getElementById("musicBtn");
+      <a
+        class="confirm-btn"
+        href="#"
+        onclick="confirmarAsistencia(event)"
+      >
+        CONFIRMAR ASISTENCIA
+      </a>
 
-    const musicAudio =
-        document.getElementById("musicAudio");
-
-    const musicStatus =
-        document.getElementById("musicStatus");
-
-
-    musicBtn.addEventListener("click", function(){
-
-        if(musicAudio.paused){
-
-            musicAudio.play()
-                .then(function(){
-
-                    musicBtn.textContent =
-                        "⏸ PAUSAR MÚSICA";
-
-                    musicStatus.textContent =
-                        "🎵 Música reproduciéndose";
-
-                    musicStatus.style.display =
-                        "block";
-
-                })
-                .catch(function(error){
-
-                    console.error(
-                        "Error reproduciendo música:",
-                        error
-                    );
-
-                    musicStatus.textContent =
-                        "❌ No se encontró musica.mp3 o el navegador no puede reproducirla.";
-
-                    musicStatus.style.display =
-                        "block";
-
-                });
-
-        }else{
-
-            musicAudio.pause();
-
-            musicBtn.textContent =
-                "▶ REPRODUCIR MÚSICA";
-
-            musicStatus.textContent =
-                "⏸ Música pausada";
-
-            musicStatus.style.display =
-                "block";
-        }
-
-    });
+    </section>
 
 
-    /* =========================
-       SI EL AUDIO DA ERROR
-    ========================= */
+    <footer>
+      Con cariño, Karla Karina Fernández Esparza ♡
+    </footer>
 
-    musicAudio.addEventListener(
-        "error",
-        function(){
+  </main>
 
-            musicStatus.textContent =
-                "❌ No se pudo cargar musica.mp3";
 
-            musicStatus.style.display =
-                "block";
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    const musicAudio = document.getElementById("musicAudio");
+    const musicBtn = document.getElementById("musicBtn");
+    const musicStatus = document.getElementById("musicStatus");
+
+
+    async function toggleMusic() {
+
+      try {
+
+        if (musicAudio.paused) {
+
+          await musicAudio.play();
+
+          musicBtn.innerHTML = "❚❚ PAUSAR MÚSICA";
+
+          musicStatus.style.display = "block";
+          musicStatus.innerHTML = "Música reproduciéndose ♪";
+
+        } else {
+
+          musicAudio.pause();
+
+          musicBtn.innerHTML = "▶ REPRODUCIR MÚSICA";
+
+          musicStatus.style.display = "block";
+          musicStatus.innerHTML = "Música pausada";
 
         }
-    );
 
+      } catch (error) {
 
-    /* =========================
-       CUENTA REGRESIVA
-    ========================= */
+        musicStatus.style.display = "block";
 
-    /*
-       CAMBIA ESTA FECHA POR LA FECHA
-       REAL DE TUS XV.
+        musicStatus.innerHTML =
+          "No se pudo reproducir. Revisa que musica.mp3 esté en GitHub.";
 
-       Formato:
-       Año-Mes-Día Hora:Minuto:Segundo
+        console.error(
+          "Error al reproducir música:",
+          error
+        );
 
-       Ejemplo:
-       "2026-12-20T20:00:00"
-    */
-
-    const fechaEvento =
-        new Date("2026-12-20T20:00:00").getTime();
-
-
-    function actualizarCuenta(){
-
-        const ahora =
-            new Date().getTime();
-
-        const diferencia =
-            fechaEvento - ahora;
-
-
-        if(diferencia <= 0){
-
-            document.getElementById("days").textContent =
-                "00";
-
-            document.getElementById("hours").textContent =
-                "00";
-
-            document.getElementById("minutes").textContent =
-                "00";
-
-            document.getElementById("seconds").textContent =
-                "00";
-
-            return;
-        }
-
-
-        const dias =
-            Math.floor(
-                diferencia /
-                (1000 * 60 * 60 * 24)
-            );
-
-        const horas =
-            Math.floor(
-                (diferencia %
-                (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
-            );
-
-        const minutos =
-            Math.floor(
-                (diferencia %
-                (1000 * 60 * 60)) /
-                (1000 * 60)
-            );
-
-        const segundos =
-            Math.floor(
-                (diferencia %
-                (1000 * 60)) /
-                1000
-            );
-
-
-        document.getElementById("days").textContent =
-            String(dias).padStart(2,"0");
-
-        document.getElementById("hours").textContent =
-            String(horas).padStart(2,"0");
-
-        document.getElementById("minutes").textContent =
-            String(minutos).padStart(2,"0");
-
-        document.getElementById("seconds").textContent =
-            String(segundos).padStart(2,"0");
+      }
 
     }
 
 
-    actualizarCuenta();
+    function confirmarAsistencia(event) {
 
-    setInterval(
-        actualizarCuenta,
-        1000
-    );
+      event.preventDefault();
 
-});
+      alert(
+        "¡Gracias por confirmar tu asistencia a los XV años de Karla Karina Fernández Esparza! 💙"
+      );
 
-</script>
+    }
+
+  </script>
 
 </body>
 </html>
